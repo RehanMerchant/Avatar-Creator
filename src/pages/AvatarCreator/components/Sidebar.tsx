@@ -499,6 +499,137 @@ const Sidebar = () => {
                         </div>
                       </AccordionContent>
                     </AccordionItem>
+                   { data.body_type!="child" ? <AccordionItem value="item-2">
+                      <AccordionTrigger>Wings</AccordionTrigger>
+                      <AccordionContent>
+                        <div className="mt-1 w-fit h-auto flex flex-col gap-4 ">
+                        <div className="flex flex-col gap-2">
+                        <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_type === "none"}
+                                onChange={() =>
+                                  setData({ ...data, wings_type:"none" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">None</p>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_type === "bat"}
+                                onChange={() =>
+                                  setData({ ...data, wings_type: "bat" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">Bat</p>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_type === "dragonfly"}
+                                onChange={() =>
+                                  setData({ ...data, wings_type: "dragonfly" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">Dragonfly</p>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_type === "feathered"}
+                                onChange={() =>
+                                  setData({ ...data, wings_type:"feathered" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">Feathered</p>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_type === "lizard"}
+                                onChange={() =>
+                                  setData({ ...data, wings_type: "lizard" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">Lizard</p>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_type === "lunar"}
+                                onChange={() =>
+                                  setData({ ...data, wings_type: "lunar" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">Lunar</p>
+                            </div>
+                            <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_type === "monarch"}
+                                onChange={() =>
+                                  setData({ ...data, wings_type: "monarch" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">Monarch</p>
+                            </div>
+                               <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_type === "pixie"}
+                                onChange={() =>
+                                  setData({ ...data, wings_type: "pixie" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">Pixie</p>
+                            </div>
+                          </div>
+                        {data.wings_type == "dragonfly" || data.wings_type=="pixie" ?
+                          <div>
+                            <p className="font-medium">Opacity</p>
+                            <div className=" mt-3 flex flex-col gap-2">
+                                
+                            <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_opacity === "solid"}
+                                onChange={() =>
+                                  setData({ ...data, wings_opacity:"solid" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">Solid</p>
+                            </div>
+
+
+                            <div className="flex gap-2 items-center">
+                              <input
+                                type="checkbox"
+                                checked={data.wings_opacity === "transparent"}
+                                onChange={() =>
+                                  setData({ ...data, wings_opacity: "transparent" })
+                                }
+                                className="size-4"
+                              />
+                              <p className="font-medium">Transparent</p>
+                            </div>
+
+                            </div>
+                          </div>:''}
+
+
+                        </div>
+                        </AccordionContent>
+                        </AccordionItem> : ''}
                   </Accordion>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 
-import{ BaseBody, BaseTail} from "@/actions";
+import{ BaseBody} from "@/actions";
 import { MyContext } from "@/context/AvatarDataContext";
 import { useContext, useEffect, useRef } from "react";
 
@@ -19,6 +19,8 @@ const Canvas =()=>{
       let head = "male"
       let adultorchild = ""
       let tailcolour = ""
+      let wingsheader = ""
+      let wingscolour =""
       if(data.body_type == 'child'){
           head = "child"
           adultorchild="child"
@@ -45,13 +47,32 @@ const Canvas =()=>{
       tailcolour=data.tail_colour;
      }
 
+    if(data.wings_type=="dragonfly" || data.wings_type=="pixie"){
+      wingsheader=data.wings_opacity
+    }else{
+      wingsheader="adult";
+    }
+     
+    if(data.body_type == "child"){
+      data.wings_type="none"
+    }
+
+
+    if(data.wings_type=="none"){
+      wingscolour="none"
+ }else{
+  wingscolour="amber";
+ }
+
       let loaded =0
       const imagebody = new Image();
       const imagehead = new Image();
       const imagetail = new Image();
+      const imagewings = new Image();
       imagebody.src = `./src/assets/Body/${data.body_type}/${data.body_colour}.png`;
       imagehead.src = `./src/assets/Head/${head}/${data.body_colour}.png`;
       imagetail.src = `./src/assets/Body/Tail/${data.tail_type}/${adultorchild}/bg/${tailcolour}.png`
+      imagewings.src = `./src/assets/Body/Wings/${data.wings_type}/${wingsheader}/bg/${wingscolour}.png`
       const canvas = canvasRef.current
       if(!canvas){
           return;
@@ -63,29 +84,34 @@ const Canvas =()=>{
       
      imagebody.onload= () =>{
     loaded++;
-    if(loaded == 3){
+    if(loaded == 4){
       basebodyfunc(ctx)
     }
      }
     imagehead.onload= () =>{
     loaded++;
-    if(loaded == 3){
+    if(loaded == 4){
       basebodyfunc(ctx)
     }
        }
 
        imagetail.onload= () =>{
         loaded++;
-        if(loaded == 3){
+        if(loaded == 4){
           basebodyfunc(ctx)
         }
            }
 
+           imagewings.onload= () =>{
+            loaded++;
+            if(loaded == 4){
+              basebodyfunc(ctx)
+            }
+               }
+
 
 function basebodyfunc (ctx: CanvasRenderingContext2D){
-  const basetail = new BaseTail(imagetail, 0, ctx);
-  const basebody = new BaseBody(imagebody,imagehead, 0, ctx);
-  basetail.draw();
+  const basebody = new BaseBody(imagebody,imagehead,imagetail,imagewings, 0, ctx);
   basebody.draw();
 }
      
