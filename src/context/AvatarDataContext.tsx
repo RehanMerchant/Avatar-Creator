@@ -5,9 +5,10 @@ interface MyContextType {
     body_type:string,
     body_colour:string,
     head_type:string,
-    tail_type:string
+    tail_type:string,
+    tail_colour:string
   }
-  setData: (newData:{body_type:string,body_colour:string,head_type:string,tail_type:string}) => void;
+  setData: (newData:{body_type:string,body_colour:string,head_type:string,tail_type:string,tail_colour:string}) => void;
 }
 
 const MyContext = createContext<MyContextType | null>(null);
@@ -18,6 +19,7 @@ const MyProvider = ({ children }: { children: React.ReactNode }) => {
     body_colour:"light",
     head_type:"",
     tail_type:"none",
+    tail_colour:"ash"
   });
 
   return (

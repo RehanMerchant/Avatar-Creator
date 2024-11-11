@@ -42,7 +42,7 @@ const Canvas =()=>{
      if(data.tail_type=="none"){
           tailcolour="none"
      }else{
-      tailcolour="red"
+      tailcolour=data.tail_colour;
      }
 
       let loaded =0
@@ -97,7 +97,9 @@ function basebodyfunc (ctx: CanvasRenderingContext2D){
     
 
   return ( 
+    <>
   <canvas className="scale-150" width="64" height="70" ref={canvasRef} />
+  </>
  )
 }
 

@@ -63,7 +63,7 @@
   this.ctx.drawImage(
   this.imagetail,
   this.SpriteSides*0,
-  this.SpriteSides*11,
+  this.SpriteSides*11, 
   this.SpriteSides,
   this.SpriteSides,
   0,
