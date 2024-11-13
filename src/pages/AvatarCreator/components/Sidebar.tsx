@@ -18,12 +18,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import ChildBaseImage from "@/assets/base_asset/child.png";
-import MaleBaseImage from "@/assets/base_asset/male.png";
-import FemaleBaseImage from "@/assets/base_asset/female.png";
-import TeenBaseImage from "@/assets/base_asset/teen.png";
-import PreganantBaseImage from "@/assets/base_asset/pregnant.png";
-import MascularBaseImage from "@/assets/base_asset/muscular.png";
+import ChildBaseImage from "/public/assets/base_asset/child.png";
+import MaleBaseImage from "/public/assets/base_asset/male.png";
+import FemaleBaseImage from "/public/assets/base_asset/female.png";
+import TeenBaseImage from "/public/assets/base_asset/teen.png";
+import PreganantBaseImage from "/public/assets/base_asset/pregnant.png";
+import MascularBaseImage from "/public/assets/base_asset/muscular.png";
 import { MyContext } from "@/context/AvatarDataContext";
 import { useContext } from "react";
 import { cn } from "@/lib/utils";

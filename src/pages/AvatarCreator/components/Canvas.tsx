@@ -73,14 +73,14 @@ const Canvas =()=>{
       const imagewings = new Image();
       const prosthesis = new Image();
       const prosthesismask = new Image();
-      imagebody.src = `/src/assets/Body/${data.body_type}/${data.body_colour}.png`;
-      imagehead.src = `/src/assets/Head/${head}/${data.body_colour}.png`;
-      imagetail.src = `/src/assets/Body/Tail/${data.tail_type}/${adultorchild}/bg/${tailcolour}.png`
-      imagetailfg.src = `/src/assets/Body/Tail/${data.tail_type}/${adultorchild}/fg/${tailcolour}.png`
-      imagewings.src = `/src/assets/Body/Wings/${data.wings_type}/${wingsheader}/bg/${wingscolour}.png`
-      imagewingsfg.src = `/src/assets/Body/Wings/${data.wings_type}/${wingsheader}/fg/${wingscolour}.png`
-      prosthesis.src = `/src/assets/Body/prosthesis/${data.prosthesis}/male/${data.prosthesis}.png`
-      prosthesismask.src = `/src/assets/Body/prosthesis/${data.prosthesis}/male/mask/${data.prosthesis}.png`
+      imagebody.src = `/assets/Body/${data.body_type}/${data.body_colour}.png`;
+      imagehead.src = `/assets/Head/${head}/${data.body_colour}.png`;
+      imagetail.src = `/assets/Body/Tail/${data.tail_type}/${adultorchild}/bg/${tailcolour}.png`
+      imagetailfg.src = `/assets/Body/Tail/${data.tail_type}/${adultorchild}/fg/${tailcolour}.png`
+      imagewings.src = `/assets/Body/Wings/${data.wings_type}/${wingsheader}/bg/${wingscolour}.png`
+      imagewingsfg.src = `/assets/Body/Wings/${data.wings_type}/${wingsheader}/fg/${wingscolour}.png`
+      prosthesis.src = `/assets/Body/prosthesis/${data.prosthesis}/male/${data.prosthesis}.png`
+      prosthesismask.src = `/assets/Body/prosthesis/${data.prosthesis}/male/mask/${data.prosthesis}.png`
       const canvas = canvasRef.current
       if(!canvas){
           return;
