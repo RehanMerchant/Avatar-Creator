@@ -1,6 +1,5 @@
 import { BaseBody, ForegroundLayer } from "@/actions";
 import { MyContext } from "@/context/AvatarDataContext";
-import { cn } from "@/lib/utils";
 import { Loader } from "lucide-react";
 import { useContext, useEffect, useRef, useState } from "react";
 
