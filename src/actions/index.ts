@@ -1,6 +1,8 @@
  
 
-const frame = 10
+const framey = 10
+const framex = 0
+
 
 
  export class BaseBody {
@@ -8,14 +10,18 @@ const frame = 10
     imagehead: any;
     imagetail:any;
     imagewings:any;
+    prosthesis:any;
+    prosthesismask:any;
     animation: number;
     ctx: CanvasRenderingContext2D;
     SpriteSides = 64;
-    constructor(imagebody:any,imagehead:any,imagetail:any,imagewings:any,animation:number,ctx:CanvasRenderingContext2D){
+    constructor(imagebody:any,imagehead:any,imagetail:any,imagewings:any,prosthesis:any,prosthesismask:any,animation:number,ctx:CanvasRenderingContext2D){
         this.imagebody = imagebody;
         this.imagehead = imagehead;
         this.imagetail = imagetail;
         this.imagewings = imagewings;
+        this.prosthesis = prosthesis;
+        this.prosthesismask = prosthesismask
         this.animation = animation
         this.ctx = ctx
   }
@@ -24,8 +30,8 @@ const frame = 10
     this.ctx.clearRect(0,0,this.SpriteSides,this.SpriteSides)
     this.ctx.drawImage(
         this.imagetail,
-        this.SpriteSides*0,
-        this.SpriteSides*frame,  
+        this.SpriteSides*framex,
+        this.SpriteSides*framey,  
         this.SpriteSides,
         this.SpriteSides,
         0,
@@ -35,8 +41,8 @@ const frame = 10
         )
         this.ctx.drawImage(
             this.imagewings,
-            this.SpriteSides*0,
-            this.SpriteSides*frame,  
+            this.SpriteSides*framex,
+            this.SpriteSides*framey,  
             this.SpriteSides,
             this.SpriteSides,
             0,
@@ -47,8 +53,8 @@ const frame = 10
 
     this.ctx.drawImage(
     this.imagebody,
-    this.SpriteSides*0,
-    this.SpriteSides*frame,
+    this.SpriteSides*framex,
+    this.SpriteSides*framey,
     this.SpriteSides,
     this.SpriteSides,
     0,
@@ -59,8 +65,8 @@ const frame = 10
  
     this.ctx.drawImage(
         this.imagehead,
-        this.SpriteSides*0,
-        this.SpriteSides*frame,
+        this.SpriteSides*framex,
+        this.SpriteSides*framey,
         this.SpriteSides,
         this.SpriteSides,
         0,
@@ -69,6 +75,28 @@ const frame = 10
         this.SpriteSides
         )
         
+        this.ctx.drawImage(
+            this.prosthesismask,
+            this.SpriteSides*framex,
+            this.SpriteSides*framey,
+            this.SpriteSides,
+            this.SpriteSides,
+            0,
+            0,
+            this.SpriteSides,
+            this.SpriteSides
+            )
+        this.ctx.drawImage(
+            this.prosthesis,
+            this.SpriteSides*framex,
+            this.SpriteSides*framey,
+            this.SpriteSides,
+            this.SpriteSides,
+            0,
+            0,
+            this.SpriteSides,
+            this.SpriteSides
+            )
 
    }
     
@@ -94,10 +122,11 @@ const frame = 10
   }
       
    draw(){
+   
     this.ctx.drawImage(
         this.imagewingsfg,
-        this.SpriteSides*0,
-        this.SpriteSides*frame,
+        this.SpriteSides*framex,
+        this.SpriteSides*framey,
         this.SpriteSides,
         this.SpriteSides,
         0,
@@ -107,8 +136,8 @@ const frame = 10
         )
     this.ctx.drawImage(
         this.imagetailfg,
-        this.SpriteSides*0,
-        this.SpriteSides*frame,
+        this.SpriteSides*framex,
+        this.SpriteSides*framey,
         this.SpriteSides,
         this.SpriteSides,
         0,
@@ -116,6 +145,7 @@ const frame = 10
         this.SpriteSides,
         this.SpriteSides
         )
+   
 
    }
     

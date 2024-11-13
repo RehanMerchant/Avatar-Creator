@@ -71,12 +71,16 @@ const Canvas =()=>{
       const imagetailfg = new Image();
       const imagewingsfg = new Image();
       const imagewings = new Image();
+      const prosthesis = new Image();
+      const prosthesismask = new Image();
       imagebody.src = `./src/assets/Body/${data.body_type}/${data.body_colour}.png`;
       imagehead.src = `./src/assets/Head/${head}/${data.body_colour}.png`;
       imagetail.src = `./src/assets/Body/Tail/${data.tail_type}/${adultorchild}/bg/${tailcolour}.png`
       imagetailfg.src = `./src/assets/Body/Tail/${data.tail_type}/${adultorchild}/fg/${tailcolour}.png`
       imagewings.src = `./src/assets/Body/Wings/${data.wings_type}/${wingsheader}/bg/${wingscolour}.png`
       imagewingsfg.src = `./src/assets/Body/Wings/${data.wings_type}/${wingsheader}/fg/${wingscolour}.png`
+      prosthesis.src = `./src/assets/Body/prosthesis/${data.prosthesis}/male/${data.prosthesis}.png`
+      prosthesismask.src = `./src/assets/Body/prosthesis/${data.prosthesis}/male/mask/${data.prosthesis}.png`
       const canvas = canvasRef.current
       if(!canvas){
           return;
@@ -88,47 +92,59 @@ const Canvas =()=>{
       
      imagebody.onload= () =>{
     loaded++;
-    if(loaded == 6){
+    if(loaded == 8){
       basebodyfunc(ctx)
     }
      }
     imagehead.onload= () =>{
     loaded++;
-    if(loaded == 6){
+    if(loaded == 8){
       basebodyfunc(ctx)
     }
        }
 
        imagetail.onload= () =>{
         loaded++;
-        if(loaded == 6){
+        if(loaded == 8){
           basebodyfunc(ctx)
         }
            }
 
            imagewings.onload= () =>{
             loaded++;
-            if(loaded == 6){
+            if(loaded == 8){
               basebodyfunc(ctx)
             }
                }
 
                imagetailfg.onload= () =>{
                 loaded++;
-                if(loaded == 6){
+                if(loaded == 8){
                   basebodyfunc(ctx)
                 }
                    }
                    imagewingsfg.onload= () =>{
                     loaded++;
-                    if(loaded == 6){
+                    if(loaded == 8){
                       basebodyfunc(ctx)
                     }
                        }
+                       prosthesis.onload= () =>{
+                        loaded++;
+                        if(loaded == 8){
+                          basebodyfunc(ctx)
+                        }
+                           }
+                           prosthesismask.onload= () =>{
+                            loaded++;
+                            if(loaded == 8){
+                              basebodyfunc(ctx)
+                            }
+                               }
 
 
 function basebodyfunc (ctx: CanvasRenderingContext2D){
-  const basebody = new BaseBody(imagebody,imagehead,imagetail,imagewings, 0, ctx);
+  const basebody = new BaseBody(imagebody,imagehead,imagetail,imagewings,prosthesis,prosthesismask, 0, ctx);
   basebody.draw();
   const foregroundlayer = new ForegroundLayer(imagetailfg,imagewingsfg,0,ctx);
   foregroundlayer.draw();

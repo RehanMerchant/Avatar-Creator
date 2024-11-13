@@ -9,9 +9,10 @@ interface MyContextType {
     tail_colour:string,
     wings_type:string,
     wings_colour:string,
-    wings_opacity:string
+    wings_opacity:string,
+    prosthesis:string
   }
-  setData: (newData:{body_type:string,body_colour:string,head_type:string,tail_type:string,tail_colour:string,wings_type:string, wings_colour:string, wings_opacity:string}) => void;
+  setData: (newData:{body_type:string,body_colour:string,head_type:string,tail_type:string,tail_colour:string,wings_type:string, wings_colour:string, wings_opacity:string,prosthesis:string}) => void;
 }
 
 const MyContext = createContext<MyContextType | null>(null);
@@ -25,7 +26,8 @@ const MyProvider = ({ children }: { children: React.ReactNode }) => {
     tail_colour:"ash",
     wings_type:"none",
     wings_colour:"",
-    wings_opacity:"solid"
+    wings_opacity:"solid",
+    prosthesis:"none"
   });
 
   return (
