@@ -93,7 +93,7 @@ const TailCOntentSidebar = () => {
                               defaultValue="ash"
                               onValueChange={handleChange}
                             >
-                              <SelectTrigger className="w-[250px] ">
+                              <SelectTrigger className="w-[230px] ">
                                 <SelectValue placeholder="Colour" />
                               </SelectTrigger>
                               <SelectContent className="bg-neutral-900 text-white">

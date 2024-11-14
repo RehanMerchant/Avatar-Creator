@@ -93,14 +93,14 @@ const Canvas: React.FC<CanvasProps> = () => {
       });
   }, [data]);
   return (
-    <>
-     
-      
-         
-          <div className="absolute z-50">{loading ? <div className="bg-neutral-950 z-0 h-[100px] w-[100px] flex items-center justify-center"><Loader className="animate-spin size-8"/></div> : ''}</div>
-          <canvas className="scale-150" width={64} height={70} ref={canvasRef} />
-         
-    </>
+  <>
+          {loading ? <div className="absolute w-[100px] z-20 h-[100px] bg-neutral-950 flex justify-center items-center">
+            <Loader className="animate-spin"/>
+          </div> : ''}
+          <canvas className="scale-150 z-10" width={64} height={70} ref={canvasRef} />
+          
+       </>  
+
   );
 };
 

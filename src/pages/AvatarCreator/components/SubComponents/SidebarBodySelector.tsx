@@ -72,9 +72,9 @@ const SidebarBodySelector = () => {
       };
   return (
                <div className="w-full">
-                  <Carousel className="max-w-sm">
+                  <Carousel className="w-full">
                     <CarouselContent>
-                      <CarouselItem className="flex justify-center gap-4">
+                      <CarouselItem className="flex md:justify-center md:gap-4 justify-around">
                         <AvatarOptionsBox
                           title={"child"}
                           image={ChildBaseImage}
@@ -89,7 +89,7 @@ const SidebarBodySelector = () => {
                         />
                       </CarouselItem>
 
-                      <CarouselItem className="flex justify-center gap-4">
+                      <CarouselItem className="flex md:justify-center md:gap-4 justify-around">
                         <AvatarOptionsBox
                           title={"muscular"}
                           image={MascularBaseImage}
@@ -104,6 +104,7 @@ const SidebarBodySelector = () => {
                         />
                       </CarouselItem>
                     </CarouselContent>
+                    
                     <CarouselPrevious
                       className="ml-11 text-white border-none h-10 w-5"
                       variant={"link"}
@@ -112,6 +113,7 @@ const SidebarBodySelector = () => {
                       className="mr-11 text-white border-none h-10 w-5"
                       variant={"link"}
                     />
+                   
                   </Carousel>
                   <div className="mt-4">
                     <p className="font-medium text-sm">Colours</p>

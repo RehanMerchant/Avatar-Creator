@@ -64,9 +64,9 @@ export const SidebarCustomHead = () => {
   return (
     <div className="w-full">
         <p className="font-semibold">Custom Head</p>
-        <Carousel className="max-w-sm mt-4">
+        <Carousel className="w-full mt-4">
                     <CarouselContent>
-                      <CarouselItem className="flex justify-center gap-4">
+                      <CarouselItem className="flex md:justify-center md:gap-4 justify-around">
 
                       <AvatarOptionsBox
                           title={"sheep"}
@@ -84,7 +84,7 @@ export const SidebarCustomHead = () => {
                         />
                       </CarouselItem>
 
-                      <CarouselItem className="flex justify-center gap-4">
+                      <CarouselItem className="flex md:justify-center md:gap-4 justify-around">
                         <AvatarOptionsBox
                           title={"goblin"}
                           image={Goblin}
@@ -99,7 +99,7 @@ export const SidebarCustomHead = () => {
                           image={Lizard}
                         />
                       </CarouselItem>
-                      <CarouselItem className="flex justify-center gap-4">
+                      <CarouselItem className="flex md:justify-center md:gap-4 justify-around">
                         <AvatarOptionsBox
                           title={"minotaur"}
                           image={Minotaur}
@@ -113,7 +113,7 @@ export const SidebarCustomHead = () => {
                           image={Orc}
                         />
                       </CarouselItem>
-                      <CarouselItem className="flex justify-center gap-4">
+                      <CarouselItem className="flex md:justify-center md:gap-4 justify-around">
                         <AvatarOptionsBox
                           title={"pig"}
                           image={Pig}
@@ -128,7 +128,7 @@ export const SidebarCustomHead = () => {
                         />
                       </CarouselItem>
                       {data.body_type!="child" &&
-                      <CarouselItem className="flex justify-center gap-4">
+                      <CarouselItem className="flex md:justify-center md:gap-4 justify-around">
                   
                          <AvatarOptionsBox
                           title={"zombie"}
@@ -146,7 +146,7 @@ export const SidebarCustomHead = () => {
                       </CarouselItem>}
                       
                       {data.body_type!="child" &&
-                        <CarouselItem className="flex justify-center gap-4">
+                        <CarouselItem className="flex md:justify-center md:gap-4 justify-around">
                         <AvatarOptionsBox
                           title={"vampire"}
                           image={Vampire}
@@ -164,6 +164,7 @@ export const SidebarCustomHead = () => {
                        }   
                     
                     </CarouselContent>
+                    
                     <CarouselPrevious
                       className="ml-11 text-white border-none h-10 w-5"
                       variant={"link"}
@@ -172,6 +173,7 @@ export const SidebarCustomHead = () => {
                       className="mr-11 text-white border-none h-10 w-5"
                       variant={"link"}
                     />
+                  
                   </Carousel>
 
     </div>

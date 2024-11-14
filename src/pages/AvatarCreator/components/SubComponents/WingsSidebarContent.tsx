@@ -50,7 +50,7 @@ const WingsSidebarContent = () => {
                                   <p className="font-medium">None</p>
                                 </div>
                               </div>
-                              <div className="w-[250px] flex items-center justify-between">
+                              <div className="w-[220px] flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -363,7 +363,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[250px] flex items-center justify-between">
+                              <div className="w-[220px] flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -541,7 +541,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[250px] flex items-center justify-between">
+                              <div className="w-[220px] flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -729,7 +729,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[250px] flex items-center justify-between">
+                              <div className="w-[220px] flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -872,7 +872,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[250px] flex items-center justify-between">
+                              <div className="w-[220px] flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -1050,7 +1050,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[250px] flex items-center justify-between">
+                              <div className="w-[220px] flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -1228,7 +1228,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[250px] flex items-center justify-between">
+                              <div className="w-[220px] flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"

@@ -19,14 +19,16 @@ import { SidebarCustomHead } from "./SubComponents/SidebarCustomHead";
 
 
 
+
 const Sidebar = () => {
   const { data } = useContext(MyContext)!;
+   
 
 
   return (
-    <aside className="h-screen w-[290px] z-50 bg-neutral-900 px-3 py-1 overflow-auto no-scrollbar">
+    <aside className="h-full w-full bg-neutral-900 px-3 py-1 overflow-auto no-scrollbar">
       <div className="w-full h-auto py-1">
-        <Accordion  type="multiple" className="w-full">
+        <Accordion  type="multiple" className="w-full mt-1">
           <AccordionItem value="body_type">
             <AccordionTrigger>Body Type</AccordionTrigger>
             <AccordionContent>
