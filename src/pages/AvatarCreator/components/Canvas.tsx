@@ -97,7 +97,7 @@ const Canvas: React.FC<CanvasProps> = () => {
      
       
          
-          <div className="absolute z-50">{loading ? <div className="bg-neutral-950 h-[100px] w-[100px] flex items-center justify-center"><Loader className="animate-spin size-8"/></div> : ''}</div>
+          <div className="absolute z-50">{loading ? <div className="bg-neutral-950 h-[85px] w-[64px] flex items-center justify-center"><Loader className="animate-spin size-8"/></div> : ''}</div>
           <canvas className="scale-150" width={64} height={70} ref={canvasRef} />
          
     </>
