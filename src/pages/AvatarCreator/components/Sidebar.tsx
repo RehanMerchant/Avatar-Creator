@@ -24,7 +24,7 @@ const Sidebar = () => {
 
 
   return (
-    <aside className="h-screen w-[290px] bg-neutral-900 px-3 py-1 overflow-auto no-scrollbar">
+    <aside className="h-screen w-[290px] z-50 bg-neutral-900 px-3 py-1 overflow-auto no-scrollbar">
       <div className="w-full h-auto py-1">
         <Accordion  type="multiple" className="w-full">
           <AccordionItem value="body_type">
