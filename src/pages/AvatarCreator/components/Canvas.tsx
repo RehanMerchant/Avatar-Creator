@@ -11,10 +11,12 @@ const Canvas: React.FC<CanvasProps> = () => {
   const [loading, setloading] = useState(true)
 
   useEffect(() => {
+    console.log(data);
     setloading(true)
     if (!data) return;
     let head = "male";
     let adultOrChild = "";
+    let headcustom = ""
     let tailColour = data.tail_type === "none" ? "none" : data.tail_colour;
     let wingsHeader = data.wings_type === "dragonfly" || data.wings_type === "pixie" ? data.wings_opacity : "adult";
     let wingsColour = data.wings_type === "none" ? "none" : data.wings_colour;
@@ -26,17 +28,27 @@ const Canvas: React.FC<CanvasProps> = () => {
     } else if (["pregnant", "female"].includes(data.body_type)) {
       head = "female";
       adultOrChild = "adult";
+      
     } else if (["male", "muscular"].includes(data.body_type)) {
       head = "male";
+      adultOrChild = "adult";
+    }else if(data.body_type=="teen"){
+      head = "female"
       adultOrChild = "adult";
     }
 
     if (data.head_type === "elderly") head += "_elderly";
     else if (data.head_type === "small") head += "_small";
 
+    if(data.custom_head=="jack" || data.custom_head=="skeleton"){
+      headcustom=data.custom_head
+    }else{
+      headcustom=data.body_colour
+    }
+
     const imagePaths: string[] = [
       `/assets/Body/${data.body_type}/${data.body_colour}.png`,
-      `/assets/Head/${head}/${data.body_colour}.png`,
+     data.head_type=="custom" ? `/assets/Head/custom/${data.custom_head}/${head}/${headcustom}.png`: `/assets/Head/${head}/${data.body_colour}.png`,
       `/assets/Body/Tail/${data.tail_type}/${adultOrChild}/bg/${tailColour}.png`,
       `/assets/Body/Tail/${data.tail_type}/${adultOrChild}/fg/${tailColour}.png`,
       `/assets/Body/Wings/${data.wings_type}/${wingsHeader}/bg/${wingsColour}.png`,
@@ -64,25 +76,22 @@ const Canvas: React.FC<CanvasProps> = () => {
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
-        // Draw images on the canvas
+
         const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask, 0, ctx);
         baseBody.draw();
 
         const foregroundLayer = new ForegroundLayer(imageTailFg, imageWingsFg, 0, ctx);
         foregroundLayer.draw();
         setloading(false)
-        // Set loading state to false once images are drawn
   
         
       })
       .catch((error) => {
         console.error("Failed to load one or more images:", error);
         setloading(false)
-        // Set loading state to false even if there's an error, so user knows the images failed to load
         
       });
   }, [data]);
-
   return (
     <>
      
