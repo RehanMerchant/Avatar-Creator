@@ -48,7 +48,7 @@ export const SidebarCustomHead = () => {
             <div
               className={cn(
                 "h-[64px] w-[64px]  hover:border-white transition-all border-4 rounded-md border-neutral-800",
-                data.body_type == title ? "border-white" : ""
+                data.custom_head == title ? "border-white" : ""
               )}
             >
               <img src={image} className="-mt-1 select-none" />

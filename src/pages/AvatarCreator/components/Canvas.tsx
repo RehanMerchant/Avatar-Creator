@@ -27,6 +27,7 @@ const Canvas: React.FC<CanvasProps> = () => {
     let head = "male";
     let adultOrChild = "";
     let headcustom = ""
+    let earcolour=""
     let tailColour = data.tail_type === "none" ? "none" : data.tail_colour;
     let wingsHeader = data.wings_type === "dragonfly" || data.wings_type === "pixie" ? data.wings_opacity : "adult";
     let wingsColour = data.wings_type === "none" ? "none" : data.wings_colour;
@@ -55,6 +56,11 @@ const Canvas: React.FC<CanvasProps> = () => {
     }else{
       headcustom=data.body_colour
     }
+    if(data.ear_type == "none"){
+      earcolour="none"
+    } else{
+      earcolour=data.ear_colour
+    }
 
     const imagePaths: string[] = [
       `/assets/Body/${data.body_type}/${data.body_colour}.png`,
@@ -64,7 +70,8 @@ const Canvas: React.FC<CanvasProps> = () => {
       `/assets/Body/Wings/${data.wings_type}/${wingsHeader}/bg/${wingsColour}.png`,
       `/assets/Body/Wings/${data.wings_type}/${wingsHeader}/fg/${wingsColour}.png`,
       `/assets/Body/prosthesis/${data.prosthesis}/male/${data.prosthesis}.png`,
-      `/assets/Body/prosthesis/${data.prosthesis}/male/mask/${data.prosthesis}.png`
+      `/assets/Body/prosthesis/${data.prosthesis}/male/mask/${data.prosthesis}.png`,
+      `/assets/Head/ears/${data.ear_type}/${adultOrChild}/${earcolour}.png`
     ];
 
     const loadImages = imagePaths.map((src) => {
@@ -78,7 +85,7 @@ const Canvas: React.FC<CanvasProps> = () => {
 
     Promise.all(loadImages)
       .then((images: HTMLImageElement[]) => {
-        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask] = images;
+        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask,imageear] = images;
 
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -87,7 +94,7 @@ const Canvas: React.FC<CanvasProps> = () => {
         if (!ctx) return;
 
 
-        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask, 0, ctx);
+        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear, 0, ctx);
         baseBody.draw();
 
         const foregroundLayer = new ForegroundLayer(imageTailFg, imageWingsFg, 0, ctx);
@@ -117,8 +124,6 @@ const Canvas: React.FC<CanvasProps> = () => {
           </div> : ''}
           <canvas className="scale-150 z-10" width={64} height={70} ref={canvasRef} />
           </div>
-         
-          
        </>  
        
 

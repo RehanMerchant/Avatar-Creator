@@ -13,6 +13,7 @@ import TailCOntentSidebar from "./SubComponents/TailCOntentSidebar";
 import WingsSidebarContent from "./SubComponents/WingsSidebarContent";
 import ProsthesisSidebarContent from "./SubComponents/ProsthesisSidebarContent";
 import { SidebarCustomHead } from "./SubComponents/SidebarCustomHead";
+import EarSidebar from "./SubComponents/EarSidebar";
 
 
 
@@ -70,6 +71,16 @@ const Sidebar = () => {
           <AccordionContent>
           <div className="mt-2 flex flex-col gap-5">
             <SidebarCustomHead/>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="ears">
+                <AccordionTrigger>
+                 Ears
+                </AccordionTrigger>
+                <AccordionContent>
+                <EarSidebar/>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
             </div>
             </AccordionContent>
           </AccordionItem>
