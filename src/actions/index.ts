@@ -1,11 +1,24 @@
- 
 
-const framey = 10
-const framex = 0
+ export class Global {
+
+    static framey = 10
+    static framex = 0
+
+    static getGlobalValue():number{
+        return this.framex,this.framey
+    }
+
+    static setGlobalValue(y:number): void {
+        this.framey = y;
+      }
+
+ }
 
 
 
- export class BaseBody {
+
+
+ export class BaseBody extends Global {
     imagebody: any;
     imagehead: any;
     imagetail:any;
@@ -15,7 +28,9 @@ const framex = 0
     animation: number;
     ctx: CanvasRenderingContext2D;
     SpriteSides = 64;
+    
     constructor(imagebody:any,imagehead:any,imagetail:any,imagewings:any,prosthesis:any,prosthesismask:any,animation:number,ctx:CanvasRenderingContext2D){
+        super()
         this.imagebody = imagebody;
         this.imagehead = imagehead;
         this.imagetail = imagetail;
@@ -25,13 +40,17 @@ const framex = 0
         this.animation = animation
         this.ctx = ctx
   }
-      
+  getGlobalValue():number {
+    return Global.framex, Global.framey
+}
+
+
    draw(){
     this.ctx.clearRect(0,0,this.SpriteSides,this.SpriteSides)
     this.ctx.drawImage(
         this.imagetail,
-        this.SpriteSides*framex,
-        this.SpriteSides*framey,  
+        this.SpriteSides*BaseBody.framex,
+        this.SpriteSides*BaseBody.framey,  
         this.SpriteSides,
         this.SpriteSides,
         0,
@@ -41,8 +60,8 @@ const framex = 0
         )
         this.ctx.drawImage(
             this.imagewings,
-            this.SpriteSides*framex,
-            this.SpriteSides*framey,  
+            this.SpriteSides*BaseBody.framex,
+            this.SpriteSides*BaseBody.framey,  
             this.SpriteSides,
             this.SpriteSides,
             0,
@@ -53,8 +72,8 @@ const framex = 0
 
     this.ctx.drawImage(
     this.imagebody,
-    this.SpriteSides*framex,
-    this.SpriteSides*framey,
+    this.SpriteSides*BaseBody.framex,
+    this.SpriteSides*BaseBody.framey,
     this.SpriteSides,
     this.SpriteSides,
     0,
@@ -65,8 +84,8 @@ const framex = 0
  
     this.ctx.drawImage(
         this.imagehead,
-        this.SpriteSides*framex,
-        this.SpriteSides*framey,
+        this.SpriteSides*BaseBody.framex,
+        this.SpriteSides*BaseBody.framey,
         this.SpriteSides,
         this.SpriteSides,
         0,
@@ -77,8 +96,8 @@ const framex = 0
         
         this.ctx.drawImage(
             this.prosthesismask,
-            this.SpriteSides*framex,
-            this.SpriteSides*framey,
+            this.SpriteSides*BaseBody.framex,
+            this.SpriteSides*BaseBody.framey,
             this.SpriteSides,
             this.SpriteSides,
             0,
@@ -88,8 +107,8 @@ const framex = 0
             )
         this.ctx.drawImage(
             this.prosthesis,
-            this.SpriteSides*framex,
-            this.SpriteSides*framey,
+            this.SpriteSides*BaseBody.framex,
+            this.SpriteSides*BaseBody.framey,
             this.SpriteSides,
             this.SpriteSides,
             0,
@@ -108,25 +127,30 @@ const framex = 0
  
   
 
- export class ForegroundLayer {
+ export class ForegroundLayer extends Global {
     imagetailfg:any;
     imagewingsfg:any;
     animation: number;
     ctx: CanvasRenderingContext2D;
     SpriteSides = 64;
     constructor(imagetailfg:any,imagewingsfg:any,animation:number,ctx:CanvasRenderingContext2D){
+        super()
         this.imagetailfg = imagetailfg;
         this.imagewingsfg = imagewingsfg;
         this.animation = animation
         this.ctx = ctx
+  }
+  getGlobalValue():number {
+    return Global.framex, Global.framey
+
   }
       
    draw(){
    
     this.ctx.drawImage(
         this.imagewingsfg,
-        this.SpriteSides*framex,
-        this.SpriteSides*framey,
+        this.SpriteSides*ForegroundLayer.framex,
+        this.SpriteSides*ForegroundLayer.framey,
         this.SpriteSides,
         this.SpriteSides,
         0,
@@ -136,8 +160,8 @@ const framex = 0
         )
     this.ctx.drawImage(
         this.imagetailfg,
-        this.SpriteSides*framex,
-        this.SpriteSides*framey,
+        this.SpriteSides*ForegroundLayer.framex,
+        this.SpriteSides*ForegroundLayer.framey,
         this.SpriteSides,
         this.SpriteSides,
         0,

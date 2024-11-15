@@ -35,7 +35,7 @@ const WingsSidebarContent = () => {
       };
     const { setData, data } = useContext(MyContext)!;
   return (
-    <div className="mt-1 w-fit h-auto flex flex-col gap-4 ">
+    <div className="mt-1 w-full h-auto flex flex-col gap-4 ">
                             <div className="flex flex-col gap-2">
                               <div>
                                 <div className="flex gap-2 items-center">
@@ -50,7 +50,7 @@ const WingsSidebarContent = () => {
                                   <p className="font-medium">None</p>
                                 </div>
                               </div>
-                              <div className="w-[220px] flex items-center justify-between">
+                              <div className="w-full  flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -363,7 +363,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[220px] flex items-center justify-between">
+                              <div className=" w-full flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -541,7 +541,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[220px] flex items-center justify-between">
+                              <div className="w-full  flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -729,7 +729,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[220px] flex items-center justify-between">
+                              <div className="w-full  flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -872,7 +872,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[220px] flex items-center justify-between">
+                              <div className="w-full  flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -1050,7 +1050,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[220px] flex items-center justify-between">
+                              <div className="w-full  flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"
@@ -1228,7 +1228,7 @@ const WingsSidebarContent = () => {
                                   </div>
                                 )}
                               </div>
-                              <div className="w-[220px] flex items-center justify-between">
+                              <div className="w-full  flex items-center justify-between">
                                 <div className="flex gap-2 items-center">
                                   <input
                                     type="checkbox"

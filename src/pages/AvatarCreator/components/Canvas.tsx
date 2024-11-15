@@ -1,4 +1,5 @@
-import { BaseBody, ForegroundLayer } from "@/actions";
+import { BaseBody, ForegroundLayer, Global } from "@/actions";
+import { Button } from "@/components/ui/button";
 import { MyContext } from "@/context/AvatarDataContext";
 import { Loader } from "lucide-react";
 import { useContext, useEffect, useRef, useState } from "react";
@@ -9,9 +10,18 @@ const Canvas: React.FC<CanvasProps> = () => {
   const { data } = useContext(MyContext)!;
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [loading, setloading] = useState(true)
+  const [value,setvalue] = useState(Global.framey)
 
+
+  const updateFramey = () => {
+    let newFramey = value + 1;
+    if (newFramey > 13) {
+      newFramey = 10;
+    }
+      setvalue(newFramey);
+    Global.setGlobalValue(newFramey); // Update the static framey in Global class
+  };
   useEffect(() => {
-    console.log(data);
     setloading(true)
     if (!data) return;
     let head = "male";
@@ -91,15 +101,26 @@ const Canvas: React.FC<CanvasProps> = () => {
         setloading(false)
         
       });
-  }, [data]);
+  }, [data,value]);
   return (
   <>
-          {loading ? <div className="absolute w-[100px] z-20 h-[100px] bg-neutral-950 flex justify-center items-center">
+         
+         <div className="absolute right-4 top-4">
+         <Button variant={"secondary"} onClick={updateFramey}  className=" text-white bg-neutral-800 hover:opacity-80">
+            Rotate
+          </Button>
+         </div>
+         
+         <div className="">
+          {loading ? <div className="absolute w-[64px] scale-150 z-20 h-[70px] bg-neutral-950 flex justify-center items-center">
             <Loader className="animate-spin"/>
           </div> : ''}
           <canvas className="scale-150 z-10" width={64} height={70} ref={canvasRef} />
+          </div>
+         
           
        </>  
+       
 
   );
 };
