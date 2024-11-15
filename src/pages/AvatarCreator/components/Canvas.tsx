@@ -106,7 +106,7 @@ const Canvas: React.FC<CanvasProps> = () => {
   <>
          
          <div className="absolute right-4 top-4">
-         <Button variant={"secondary"} onClick={updateFramey}  className=" text-white bg-neutral-800 hover:opacity-80">
+         <Button variant={"secondary"} onClick={updateFramey}  className=" text-white bg-neutral-800">
             Rotate
           </Button>
          </div>
