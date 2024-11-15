@@ -6,7 +6,8 @@ import Sidebar from "./components/Sidebar";
 const AvatarCreatorPage = () => {
   return (
     <MyProvider>
-      <section className="h-svh w-screen md:flex flex-col  bg-neutral-950 text-white ">
+      <section className="h-screen
+       w-screen md:flex flex-col  bg-neutral-950 text-white ">
 
 
        <div className="w-full flex h-[40%] md:h-screen md:w-[calc(100vw-290px)] md:ml-[290px] justify-center items-center">
