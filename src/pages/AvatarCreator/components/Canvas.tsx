@@ -118,10 +118,10 @@ const Canvas: React.FC<CanvasProps> = () => {
         if (!ctx) return;
 
 
-        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose, 0, ctx);
+        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose,imagehorns,imagefin, 0, ctx);
         baseBody.draw();
 
-        const foregroundLayer = new ForegroundLayer(imageTailFg, imageWingsFg,imagehorns,imagefin, 0, ctx);
+        const foregroundLayer = new ForegroundLayer(imageTailFg, imageWingsFg, 0, ctx);
         foregroundLayer.draw();
         setloading(false)
   

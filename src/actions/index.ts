@@ -26,16 +26,20 @@
     prosthesis:any;
     prosthesismask:any;
     imagenose:any;
+    imagehorns:any;
+    imagefin:any;
     animation: number;
     ctx: CanvasRenderingContext2D;
     SpriteSides = 64;
     imageear: any;
     
-    constructor(imagebody:any,imagehead:any,imagetail:any,imagewings:any,prosthesis:any,prosthesismask:any,imageear:any,imagenose:any,animation:number,ctx:CanvasRenderingContext2D){
+    constructor(imagebody:any,imagehead:any,imagetail:any,imagewings:any,prosthesis:any,prosthesismask:any,imageear:any,imagenose:any,imagehorns:any,imagefin:any,animation:number,ctx:CanvasRenderingContext2D){
         super()
         this.imagebody = imagebody;
         this.imagehead = imagehead;
         this.imagetail = imagetail;
+        this.imagehorns=imagehorns;
+        this.imagefin = imagefin;
         this.imagewings = imagewings;
         this.prosthesis = prosthesis;
         this.prosthesismask = prosthesismask;
@@ -142,7 +146,31 @@
                     this.SpriteSides,
                     this.SpriteSides
                     )
-
+                
+                         
+                                this.ctx.drawImage(
+                                    this.imagefin,
+                                    this.SpriteSides*ForegroundLayer.framex,
+                                    this.SpriteSides*ForegroundLayer.framey,
+                                    this.SpriteSides,
+                                    this.SpriteSides,
+                                    0,
+                                    0,
+                                    this.SpriteSides,
+                                    this.SpriteSides
+                                    )
+                                    this.ctx.drawImage(
+                                        this.imagehorns,
+                                        this.SpriteSides*ForegroundLayer.framex,
+                                        this.SpriteSides*ForegroundLayer.framey,
+                                        this.SpriteSides,
+                                        this.SpriteSides,
+                                        0,
+                                        0,
+                                        this.SpriteSides,
+                                        this.SpriteSides
+                                        )
+ 
    }
     
  }
@@ -156,17 +184,14 @@
  export class ForegroundLayer extends Global {
     imagetailfg:any;
     imagewingsfg:any;
-    imagehorns:any;
-    imagefin:any;
+
     animation: number;
     ctx: CanvasRenderingContext2D;
     SpriteSides = 64;
-    constructor(imagetailfg:any,imagewingsfg:any,imagehorns:any,imagefin:any,animation:number,ctx:CanvasRenderingContext2D){
+    constructor(imagetailfg:any,imagewingsfg:any,animation:number,ctx:CanvasRenderingContext2D){
         super()
         this.imagetailfg = imagetailfg;
         this.imagewingsfg = imagewingsfg;
-        this.imagehorns=imagehorns;
-        this.imagefin = imagefin;
         this.animation = animation
         this.ctx = ctx
   }
@@ -199,28 +224,7 @@
         this.SpriteSides,
         this.SpriteSides
         )
-        this.ctx.drawImage(
-            this.imagehorns,
-            this.SpriteSides*ForegroundLayer.framex,
-            this.SpriteSides*ForegroundLayer.framey,
-            this.SpriteSides,
-            this.SpriteSides,
-            0,
-            0,
-            this.SpriteSides,
-            this.SpriteSides
-            )
-            this.ctx.drawImage(
-                this.imagefin,
-                this.SpriteSides*ForegroundLayer.framex,
-                this.SpriteSides*ForegroundLayer.framey,
-                this.SpriteSides,
-                this.SpriteSides,
-                0,
-                0,
-                this.SpriteSides,
-                this.SpriteSides
-                )
+      
 
    }
     
