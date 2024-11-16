@@ -73,7 +73,7 @@ const Sidebar = () => {
           <AccordionContent>
           <div className="mt-2 flex flex-col gap-5">
             <SidebarCustomHead/>
-            {data.body_type=="child" || data.body_type=="teen" ? '':
+            {data.body_type=="child" || data.body_type=="teen" || data.head_type=="custom" ? '':
             <HeadTypeSidebar/>}
             <Accordion type="single" collapsible>
               <AccordionItem value="ears">
