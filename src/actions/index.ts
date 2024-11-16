@@ -144,14 +144,16 @@
     imagetailfg:any;
     imagewingsfg:any;
     imagehorns:any;
+    imagefin:any;
     animation: number;
     ctx: CanvasRenderingContext2D;
     SpriteSides = 64;
-    constructor(imagetailfg:any,imagewingsfg:any,imagehorns:any,animation:number,ctx:CanvasRenderingContext2D){
+    constructor(imagetailfg:any,imagewingsfg:any,imagehorns:any,imagefin:any,animation:number,ctx:CanvasRenderingContext2D){
         super()
         this.imagetailfg = imagetailfg;
         this.imagewingsfg = imagewingsfg;
         this.imagehorns=imagehorns;
+        this.imagefin = imagefin;
         this.animation = animation
         this.ctx = ctx
   }
@@ -195,6 +197,17 @@
             this.SpriteSides,
             this.SpriteSides
             )
+            this.ctx.drawImage(
+                this.imagefin,
+                this.SpriteSides*ForegroundLayer.framex,
+                this.SpriteSides*ForegroundLayer.framey,
+                this.SpriteSides,
+                this.SpriteSides,
+                0,
+                0,
+                this.SpriteSides,
+                this.SpriteSides
+                )
 
    }
     
