@@ -62,7 +62,7 @@ const Canvas: React.FC<CanvasProps> = () => {
     if(data.ear_type == "none"){
       earcolour="none"
     } else{
-      earcolour=data.ear_colour
+      earcolour=data.body_colour
     }
 
 
