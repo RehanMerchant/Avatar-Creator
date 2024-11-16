@@ -147,7 +147,6 @@ const Canvas: React.FC<CanvasProps> = () => {
         </div> : ''}
         <canvas className="scale-150 z-10" width={64} height={70} ref={canvasRef} />
      </div>
-     {data.nose}<br/>
   </>  
        
 
