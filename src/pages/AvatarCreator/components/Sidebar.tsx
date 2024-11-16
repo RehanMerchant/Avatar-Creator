@@ -14,6 +14,7 @@ import WingsSidebarContent from "./SubComponents/WingsSidebarContent";
 import ProsthesisSidebarContent from "./SubComponents/ProsthesisSidebarContent";
 import { SidebarCustomHead } from "./SubComponents/SidebarCustomHead";
 import EarSidebar from "./SubComponents/EarSidebar";
+import HornsSidebar from "./SubComponents/HornsSidebar";
 
 
 
@@ -78,6 +79,14 @@ const Sidebar = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                 <EarSidebar/>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="horns">
+                <AccordionTrigger>
+                 Horns
+                </AccordionTrigger>
+                <AccordionContent>
+                 <HornsSidebar/>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
