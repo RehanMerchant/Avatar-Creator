@@ -15,6 +15,7 @@ import ProsthesisSidebarContent from "./SubComponents/ProsthesisSidebarContent";
 import { SidebarCustomHead } from "./SubComponents/SidebarCustomHead";
 import EarSidebar from "./SubComponents/EarSidebar";
 import HornsSidebar from "./SubComponents/HornsSidebar";
+import HeadTypeSidebar from "./SubComponents/HeadTypeSidebar";
 
 
 
@@ -35,9 +36,9 @@ const Sidebar = () => {
             <AccordionTrigger>Body Type</AccordionTrigger>
             <AccordionContent>
               <div className="mt-2 flex flex-col gap-5">
+           
+                  <SidebarBodySelector/>
                 
-                 <SidebarBodySelector/>
-
                 <div className="w-full">
                   <Accordion type="single" collapsible>
                     <AccordionItem value="item-1">
@@ -72,6 +73,8 @@ const Sidebar = () => {
           <AccordionContent>
           <div className="mt-2 flex flex-col gap-5">
             <SidebarCustomHead/>
+            {data.body_type=="child" || data.body_type=="teen" ? '':
+            <HeadTypeSidebar/>}
             <Accordion type="single" collapsible>
               <AccordionItem value="ears">
                 <AccordionTrigger>

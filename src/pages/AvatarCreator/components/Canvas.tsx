@@ -71,7 +71,7 @@ const Canvas: React.FC<CanvasProps> = () => {
     }
 
     const imagePaths: string[] = [
-      `/assets/Body/${data.body_type}/${data.body_colour}.png`,
+    `/assets/Body/${data.body_type}/${data.body_colour}.png`,
      data.head_type=="custom" ? `/assets/Head/custom/${data.custom_head}/${head}/${headcustom}.png`: `/assets/Head/${head}/${data.body_colour}.png`,
       `/assets/Body/Tail/${data.tail_type}/${adultOrChild}/bg/${tailColour}.png`,
       `/assets/Body/Tail/${data.tail_type}/${adultOrChild}/fg/${tailColour}.png`,
@@ -119,23 +119,20 @@ const Canvas: React.FC<CanvasProps> = () => {
       });
   }, [data,value]);
   return (
+  
   <>
-         
-         <div className="absolute right-4 top-4">
-         <Button variant={"secondary"} onClick={updateFramey}  className=" text-white bg-neutral-800">
-            Rotate
-          </Button>
-         </div>
-         
-         <div className="">
-          {loading ? <div className="absolute w-[64px] scale-150 z-20 h-[70px] bg-neutral-950 flex justify-center items-center">
-            <Loader className="animate-spin"/>
-          </div> : ''}
-          <canvas className="scale-150 z-10" width={64} height={70} ref={canvasRef} />
-          </div>
-          {data.horns_type}<br/>
-          {data.horns_colour}
-       </>  
+    <div className="absolute right-4 top-4">
+     <Button variant={"secondary"} onClick={updateFramey}  className=" text-white bg-neutral-800">
+         Rotate
+     </Button>
+    </div>
+    <div className="">
+         {loading ? <div className="absolute w-[64px] scale-150 z-20 h-[70px] bg-neutral-950 flex justify-center items-center">
+        <Loader className="animate-spin"/>
+        </div> : ''}
+        <canvas className="scale-150 z-10" width={64} height={70} ref={canvasRef} />
+     </div>
+  </>  
        
 
   );
