@@ -17,9 +17,10 @@ interface MyContextType {
     horns_type:string,
     horns_colour:string,
     fin:string,
-    fin_colour:string
+    fin_colour:string,
+    nose:string
   }
-  setData: (newData:{body_type:string,body_colour:string,head_type:string,tail_type:string,tail_colour:string,wings_type:string, wings_colour:string, wings_opacity:string,prosthesis:string,custom_head:string,ear_type:string,ear_colour:string,horns_type:string,horns_colour:string,fin:string,fin_colour:string}) => void;
+  setData: (newData:{body_type:string,body_colour:string,head_type:string,tail_type:string,tail_colour:string,wings_type:string, wings_colour:string, wings_opacity:string,prosthesis:string,custom_head:string,ear_type:string,ear_colour:string,horns_type:string,horns_colour:string,fin:string,fin_colour:string,nose:string}) => void;
 }
 
 const MyContext = createContext<MyContextType | null>(null);
@@ -41,7 +42,8 @@ const MyProvider = ({ children }: { children: React.ReactNode }) => {
     horns_type:"none",
     horns_colour:"amber",
     fin:"none",
-    fin_colour:"amber"
+    fin_colour:"amber",
+    nose:"none"
 
   });
 

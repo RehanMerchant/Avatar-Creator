@@ -17,6 +17,7 @@ import EarSidebar from "./SubComponents/EarSidebar";
 import HornsSidebar from "./SubComponents/HornsSidebar";
 import HeadTypeSidebar from "./SubComponents/HeadTypeSidebar";
 import FinsSIdebar from "./SubComponents/FinsSIdebar";
+import NoseSidebar from "./SubComponents/NoseSidebar";
 
 
 
@@ -101,6 +102,14 @@ const Sidebar = () => {
                  <FinsSIdebar/>
                 </AccordionContent>
               </AccordionItem>
+           {  data.body_type!="child" && <AccordionItem value="nose">
+                <AccordionTrigger>
+                 Nose
+                </AccordionTrigger>
+                <AccordionContent>
+                 <NoseSidebar/>
+                </AccordionContent>
+              </AccordionItem>}
             </Accordion>
             </div>
             </AccordionContent>
