@@ -102,7 +102,7 @@ const Sidebar = () => {
                  <FinsSIdebar/>
                 </AccordionContent>
               </AccordionItem>
-           {  data.body_type!="child" && <AccordionItem value="nose">
+           {  data.body_type=="child" || data.head_type=="custom" ? '' : <AccordionItem value="nose">
                 <AccordionTrigger>
                  Nose
                 </AccordionTrigger>
