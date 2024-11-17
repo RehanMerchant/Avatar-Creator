@@ -155,8 +155,6 @@ const Canvas: React.FC<CanvasProps> = () => {
         <Loader className="animate-spin"/>
         </div> : ''}
         <canvas className="scale-150 z-10" width={64} height={70} ref={canvasRef} />
-        {data.hair_type}<br/>
-        {data.hair_colour}
      </div>
   </>  
        
