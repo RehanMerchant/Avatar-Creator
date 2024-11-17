@@ -6,7 +6,7 @@ const HeadTypeSidebar = () => {
     const { setData, data } = useContext(MyContext)!;
   return (
     <div className="mt-1 w-fit h-auto flex flex-col gap-4 ">
-        <p className="font-medium">Head Type</p>
+        <p className="font-medium">Head Enhancement</p>
     <div className="flex flex-col gap-2">
         
     <div className="flex gap-2 items-center">

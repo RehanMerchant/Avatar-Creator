@@ -18,6 +18,7 @@ import HornsSidebar from "./SubComponents/HornsSidebar";
 import HeadTypeSidebar from "./SubComponents/HeadTypeSidebar";
 import FinsSIdebar from "./SubComponents/FinsSIdebar";
 import NoseSidebar from "./SubComponents/NoseSidebar";
+import HairSidebarCOntent from "./SubComponents/HairSidebarCOntent";
 
 
 
@@ -78,14 +79,14 @@ const Sidebar = () => {
             {data.body_type=="child" || data.body_type=="teen" || data.head_type=="custom" ? '':
             <HeadTypeSidebar/>}
             <Accordion type="single" collapsible>
-              <AccordionItem value="ears">
-                <AccordionTrigger>
-                 Ears
-                </AccordionTrigger>
-                <AccordionContent>
-                <EarSidebar/>
-                </AccordionContent>
-              </AccordionItem>
+           {  data.head_type=="custom" ? '' : <AccordionItem value="ears">
+              <AccordionTrigger>
+                Ears
+              </AccordionTrigger>
+              <AccordionContent>
+              <EarSidebar/>
+              </AccordionContent>
+            </AccordionItem>}
               <AccordionItem value="horns">
                 <AccordionTrigger>
                  Horns
@@ -94,14 +95,14 @@ const Sidebar = () => {
                  <HornsSidebar/>
                 </AccordionContent>
               </AccordionItem>
-              <AccordionItem value="fins">
+      {     data.head_type=="custom" ? '' :     <AccordionItem value="fins">
                 <AccordionTrigger>
                  Fins
                 </AccordionTrigger>
                 <AccordionContent>
                  <FinsSIdebar/>
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem>}
            {  data.body_type=="child" || data.head_type=="custom" ? '' : <AccordionItem value="nose">
                 <AccordionTrigger>
                  Nose
@@ -110,6 +111,16 @@ const Sidebar = () => {
                  <NoseSidebar/>
                 </AccordionContent>
               </AccordionItem>}
+
+         {   data.head_type=="custom" ? '' :    <AccordionItem value="hair">
+                <AccordionTrigger>
+                 Hair
+                </AccordionTrigger>
+                <AccordionContent>
+                <HairSidebarCOntent/>
+                </AccordionContent>
+              </AccordionItem>}
+
             </Accordion>
             </div>
             </AccordionContent>

@@ -17,9 +17,11 @@ interface MyContextType {
     horns_colour:string,
     fin:string,
     fin_colour:string,
-    nose:string
+    nose:string,
+    hair_type:string,
+    hair_colour:string,
   }
-  setData: (newData:{body_type:string,body_colour:string,head_type:string,tail_type:string,tail_colour:string,wings_type:string, wings_colour:string, wings_opacity:string,prosthesis:string,custom_head:string,ear_type:string,horns_type:string,horns_colour:string,fin:string,fin_colour:string,nose:string}) => void;
+  setData: (newData:{body_type:string,body_colour:string,head_type:string,tail_type:string,tail_colour:string,wings_type:string, wings_colour:string, wings_opacity:string,prosthesis:string,custom_head:string,ear_type:string,horns_type:string,horns_colour:string,fin:string,fin_colour:string,nose:string,hair_type:string,hair_colour:string}) => void;
 }
 
 const MyContext = createContext<MyContextType | null>(null);
@@ -31,7 +33,7 @@ const MyProvider = ({ children }: { children: React.ReactNode }) => {
     head_type:"",
     custom_head:"",
     tail_type:"none",
-    tail_colour:"ash",
+    tail_colour:"ash", 
     wings_type:"none",
     wings_colour:"",
     wings_opacity:"solid",
@@ -41,7 +43,9 @@ const MyProvider = ({ children }: { children: React.ReactNode }) => {
     horns_colour:"amber",
     fin:"none",
     fin_colour:"amber",
-    nose:"none"
+    nose:"none",
+    hair_type:"none",
+    hair_colour:"ash"
 
   });
 
