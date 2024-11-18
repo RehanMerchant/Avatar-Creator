@@ -26,7 +26,7 @@ const SidebarBodySelector = () => {
         return (
           <div
             onClick={() => {
-              setData({ ...data, body_type:title,head_type:"",prosthesis:"none", wings_type:"none",custom_head:"",nose:"none", hair_type:"none", eyebrow:"none"});
+              setData({ ...data, body_type:title,head_type:"",prosthesis:"none", wings_type:"none",custom_head:"",nose:"none", hair_type:"none", eyebrow:"none", much:"none", beard:"none"});
             }}
             className="flex flex-col items-center gap-0.5 cursor-pointer"
           >

@@ -5,7 +5,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-
 import { MyContext } from "@/context/AvatarDataContext";
 import { useContext } from "react";
 import SidebarBodySelector from "./SubComponents/SidebarBodySelector";
@@ -21,133 +20,154 @@ import HairSidebarCOntent from "./SubComponents/HairSidebarCOntent";
 import Eyessidebar from "./SubComponents/Eyessidebar";
 import EyebrowsSidebar from "./SubComponents/EyebrowsSidebar";
 import BeardSidebar from "./SubComponents/BeardSidebar";
-
-
-
-
-
-
+import MushtacheSidebar from "./SubComponents/MushtacheSidebar";
 
 const Sidebar = () => {
   const { data } = useContext(MyContext)!;
-   
-
 
   return (
     <aside className="h-full w-full bg-neutral-900 px-3 py-1 overflow-auto no-scrollbar">
       <div className="w-full h-auto py-1">
-        <Accordion  type="multiple" className="w-full mt-1">
+        <Accordion type="multiple" className="w-full mt-1">
           <AccordionItem value="body_type">
             <AccordionTrigger>Body Type</AccordionTrigger>
             <AccordionContent>
               <div className="mt-2 flex flex-col gap-5">
-           
-                  <SidebarBodySelector/>
-                
+                <SidebarBodySelector />
+
                 <div className="w-full">
                   <Accordion type="single" collapsible>
                     <AccordionItem value="item-1">
                       <AccordionTrigger>Tail</AccordionTrigger>
                       <AccordionContent>
-                        <TailCOntentSidebar/>
+                        <TailCOntentSidebar />
                       </AccordionContent>
                     </AccordionItem>
                     {data.body_type != "child" ? (
                       <AccordionItem value="item-2">
                         <AccordionTrigger>Wings</AccordionTrigger>
                         <AccordionContent>
-                          <WingsSidebarContent/>
+                          <WingsSidebarContent />
                         </AccordionContent>
                       </AccordionItem>
                     ) : (
                       ""
                     )}
-                   { data.body_type=="male" || data.body_type=="muscular" ?  <AccordionItem value="item-3">
-                      <AccordionTrigger>Prosthesis</AccordionTrigger>
-                      <AccordionContent>
-                     <ProsthesisSidebarContent/>
-                      </AccordionContent>
-                    </AccordionItem>:''}
+                    {data.body_type == "male" ||
+                    data.body_type == "muscular" ? (
+                      <AccordionItem value="item-3">
+                        <AccordionTrigger>Prosthesis</AccordionTrigger>
+                        <AccordionContent>
+                          <ProsthesisSidebarContent />
+                        </AccordionContent>
+                      </AccordionItem>
+                    ) : (
+                      ""
+                    )}
                   </Accordion>
                 </div>
               </div>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="head">
-          <AccordionTrigger>Head</AccordionTrigger>
-          <AccordionContent>
-          <div className="mt-2 flex flex-col gap-5">
-            <SidebarCustomHead/>
-            {data.body_type=="child" || data.body_type=="teen" || data.head_type=="custom" ? '':
-            <HeadTypeSidebar/>}
-            <Accordion type="single" collapsible>
+            <AccordionTrigger>Head</AccordionTrigger>
+            <AccordionContent>
+              <div className="mt-2 flex flex-col gap-5">
+                <SidebarCustomHead />
+                {data.body_type == "child" ||
+                data.body_type == "teen" ||
+                data.head_type == "custom" ? (
+                  ""
+                ) : (
+                  <HeadTypeSidebar />
+                )}
+                <Accordion type="single" collapsible>
+                  {data.head_type == "custom" || data.body_type=="child" ? (
+                    ""
+                  ) : (
+                    <AccordionItem value="beard">
+                      <AccordionTrigger>Beard</AccordionTrigger>
+                      <AccordionContent>
+                        <BeardSidebar />
+                      </AccordionContent>
+                    </AccordionItem>
+                  )}
 
-            {  data.head_type=="custom" ? '' : <AccordionItem value="beard">
-              <AccordionTrigger>
-                Beard
-              </AccordionTrigger>
-              <AccordionContent>
-             <BeardSidebar/>
-              </AccordionContent>
-            </AccordionItem>}
+                  {data.head_type == "custom" ? (
+                    ""
+                  ) : (
+                    <AccordionItem value="ears">
+                      <AccordionTrigger>Ears</AccordionTrigger>
+                      <AccordionContent>
+                        <EarSidebar />
+                      </AccordionContent>
+                    </AccordionItem>
+                  )}
+
+                  {data.head_type == "custom" ? (
+                    ""
+                  ) : (
+                    <AccordionItem value="eyes">
+                      <AccordionTrigger>Eyes</AccordionTrigger>
+                      <AccordionContent>
+                        <Eyessidebar />
+                      </AccordionContent>
+                    </AccordionItem>
+                  )}
+
+                  {data.head_type == "custom" ? (
+                    ""
+                  ) : (
+                    <AccordionItem value="eyebrows">
+                      <AccordionTrigger>Eyebrows</AccordionTrigger>
+                      <AccordionContent>
+                        <EyebrowsSidebar />
+                      </AccordionContent>
+                    </AccordionItem>
+                  )}
+
+                  {data.body_type == "child" || data.head_type == "custom" ? (
+                    ""
+                  ) : (
+                    <AccordionItem value="hair">
+                      <AccordionTrigger>Hair</AccordionTrigger>
+                      <AccordionContent>
+                        <HairSidebarCOntent />
+                      </AccordionContent>
+                    </AccordionItem>
+                  )}
+                  <AccordionItem value="horns">
+                    <AccordionTrigger>Horns</AccordionTrigger>
+                    <AccordionContent>
+                      <HornsSidebar />
+                    </AccordionContent>
+                  </AccordionItem>
 
 
-           {  data.head_type=="custom" ? '' : <AccordionItem value="ears">
-              <AccordionTrigger>
-                Ears
-              </AccordionTrigger>
-              <AccordionContent>
-              <EarSidebar/>
-              </AccordionContent>
-            </AccordionItem>}
-
-            {  data.head_type=="custom" ? '' : <AccordionItem value="eyes">
-              <AccordionTrigger>
-                Eyes
-              </AccordionTrigger>
-              <AccordionContent>
-              <Eyessidebar/>
-              </AccordionContent>
-            </AccordionItem>}
-
-              
-            {  data.head_type=="custom" ? '' : <AccordionItem value="eyebrows">
-              <AccordionTrigger>
-                Eyebrows
-              </AccordionTrigger>
-              <AccordionContent>
-              <EyebrowsSidebar/>
-              </AccordionContent>
-            </AccordionItem>}
-
-            {  data.body_type=="child" || data.head_type=="custom" ? '' :    <AccordionItem value="hair">
-                <AccordionTrigger>
-                 Hair
-                </AccordionTrigger>
-                <AccordionContent>
-                <HairSidebarCOntent/>
-                </AccordionContent>
-              </AccordionItem>}
-              <AccordionItem value="horns">
-                <AccordionTrigger>
-                 Horns
-                </AccordionTrigger>
-                <AccordionContent>
-                 <HornsSidebar/>
-                </AccordionContent>
-              </AccordionItem>
-           {  data.body_type=="child" || data.head_type=="custom" ? '' : <AccordionItem value="nose">
-                <AccordionTrigger>
-                 Nose
-                </AccordionTrigger>
-                <AccordionContent>
-                 <NoseSidebar/>
-                </AccordionContent>
-              </AccordionItem>}
+                  {data.body_type == "child" || data.head_type == "custom" ? (
+                    ""
+                  ) : (
+                    <AccordionItem value="mushtache">
+                      <AccordionTrigger>Mushtache</AccordionTrigger>
+                      <AccordionContent>
+                      <MushtacheSidebar/>
+                      </AccordionContent>
+                    </AccordionItem>
+                  )}
 
 
-            </Accordion>
-            </div>
+                  {data.body_type == "child" || data.head_type == "custom" ? (
+                    ""
+                  ) : (
+                    <AccordionItem value="nose">
+                      <AccordionTrigger>Nose</AccordionTrigger>
+                      <AccordionContent>
+                        <NoseSidebar />
+                      </AccordionContent>
+                    </AccordionItem>
+                  )}
+                </Accordion>
+              </div>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
