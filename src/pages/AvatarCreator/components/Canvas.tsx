@@ -167,8 +167,6 @@ const Canvas: React.FC<CanvasProps> = () => {
         </div> : ''}
         <canvas style={{imageRendering:"pixelated"}} className="scale-[2.5] z-10 " width={64} height={70} ref={canvasRef} />
      </div>
-     {data.beard}<br/>
-     {data.beard_colour}
   </>  
        
 
