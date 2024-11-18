@@ -73,11 +73,6 @@ const Canvas: React.FC<CanvasProps> = () => {
       horncolour=data.horns_colour
     }
 
-    if(data.fin == "none"){
-      fincolor="none"
-    } else{
-      fincolor=data.fin_colour
-    }
 
     if(data.nose == "none"){
       nosecolor="none"
@@ -102,7 +97,6 @@ const Canvas: React.FC<CanvasProps> = () => {
       `/assets/Body/prosthesis/${data.prosthesis}/male/mask/${data.prosthesis}.png`,
       `/assets/Head/ears/${data.ear_type}/${adultOrChild}/${earcolour}.png`,
       `/assets/Head/horns/${data.horns_type}/${adultOrChild}/${horncolour}.png`,
-       `/assets/Head/fins/${data.fin}/${adultOrChild}/${fincolor}.png`,
        `/assets/Head/nose/${data.nose}/adult/${nosecolor}.png`,
        `/assets/Head/Hair/${data.hair_type}/adult/${haircolor}.png`
     ];
@@ -118,7 +112,7 @@ const Canvas: React.FC<CanvasProps> = () => {
 
     Promise.all(loadImages)
       .then((images: HTMLImageElement[]) => {
-        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask,imageear,imagehorns,imagefin,imagenose,imagehair] = images;
+        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask,imageear,imagehorns,imagenose,imagehair] = images;
 
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -127,7 +121,7 @@ const Canvas: React.FC<CanvasProps> = () => {
         if (!ctx) return;
 
 
-        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose,imagehorns,imagefin,imagehair, 0, ctx);
+        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose,imagehorns,imagehair, 0, ctx);
         baseBody.draw();
 
         const foregroundLayer = new ForegroundLayer(imageTailFg, imageWingsFg, 0, ctx);

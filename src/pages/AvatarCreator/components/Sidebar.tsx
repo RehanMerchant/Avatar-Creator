@@ -16,7 +16,6 @@ import { SidebarCustomHead } from "./SubComponents/SidebarCustomHead";
 import EarSidebar from "./SubComponents/EarSidebar";
 import HornsSidebar from "./SubComponents/HornsSidebar";
 import HeadTypeSidebar from "./SubComponents/HeadTypeSidebar";
-import FinsSIdebar from "./SubComponents/FinsSIdebar";
 import NoseSidebar from "./SubComponents/NoseSidebar";
 import HairSidebarCOntent from "./SubComponents/HairSidebarCOntent";
 
@@ -95,14 +94,6 @@ const Sidebar = () => {
                  <HornsSidebar/>
                 </AccordionContent>
               </AccordionItem>
-      {     data.head_type=="custom" ? '' :     <AccordionItem value="fins">
-                <AccordionTrigger>
-                 Fins
-                </AccordionTrigger>
-                <AccordionContent>
-                 <FinsSIdebar/>
-                </AccordionContent>
-              </AccordionItem>}
            {  data.body_type=="child" || data.head_type=="custom" ? '' : <AccordionItem value="nose">
                 <AccordionTrigger>
                  Nose
@@ -112,7 +103,7 @@ const Sidebar = () => {
                 </AccordionContent>
               </AccordionItem>}
 
-         {   data.head_type=="custom" ? '' :    <AccordionItem value="hair">
+         {  data.body_type=="child" || data.head_type=="custom" ? '' :    <AccordionItem value="hair">
                 <AccordionTrigger>
                  Hair
                 </AccordionTrigger>

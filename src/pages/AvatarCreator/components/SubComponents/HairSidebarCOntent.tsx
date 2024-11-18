@@ -114,6 +114,24 @@ const HairSidebarCOntent = () => {
       <div className="flex gap-2 items-center">
         <input
           type="checkbox"
+          checked={data.hair_type == "bob"}
+          onChange={() => setData({ ...data, hair_type: "bob" })}
+          className="size-4"
+        />
+        <p className="font-medium">Bob</p>
+      </div>
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "bob_side_part"}
+          onChange={() => setData({ ...data, hair_type: "bob_side_part" })}
+          className="size-4"
+        />
+        <p className="font-medium">Bob Side Part</p>
+      </div>
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
           checked={data.hair_type == "braid2"}
           onChange={() => setData({ ...data, hair_type: "braid2" })}
           className="size-4"
@@ -128,6 +146,33 @@ const HairSidebarCOntent = () => {
           className="size-4"
         />
         <p className="font-medium">Bunches</p>
+      </div>
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "buzzcut"}
+          onChange={() => setData({ ...data, hair_type: "buzzcut" })}
+          className="size-4"
+        />
+        <p className="font-medium">Buzzcut</p>
+      </div>
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "cornrows"}
+          onChange={() => setData({ ...data, hair_type: "cornrows" })}
+          className="size-4"
+        />
+        <p className="font-medium">Cornrows</p>
+      </div>
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "cowlick"}
+          onChange={() => setData({ ...data, hair_type: "cowlick" })}
+          className="size-4"
+        />
+        <p className="font-medium">Cowlick</p>
       </div>
       <div className="flex gap-2 items-center">
         <input
