@@ -144,7 +144,7 @@ const Canvas: React.FC<CanvasProps> = () => {
      <Button variant={"secondary"} onClick={updateFramey}  className=" text-white bg-neutral-800">
          Rotate
      </Button>
-    </div>
+    </div> 
     <div className="">
          {loading ? <div className="absolute w-[64px] scale-[2] z-20 h-[70px] bg-neutral-950 flex justify-center items-center">
         <Loader className="animate-spin size-4"/>
