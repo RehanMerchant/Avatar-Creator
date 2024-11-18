@@ -98,7 +98,8 @@ const Canvas: React.FC<CanvasProps> = () => {
       `/assets/Head/ears/${data.ear_type}/${adultOrChild}/${earcolour}.png`,
       `/assets/Head/horns/${data.horns_type}/${adultOrChild}/${horncolour}.png`,
        `/assets/Head/nose/${data.nose}/adult/${nosecolor}.png`,
-       `/assets/Head/Hair/${data.hair_type}/adult/${haircolor}.png`
+       `/assets/Head/Hair/${data.hair_type}/adult/${haircolor}.png`,
+       `/assets/Head/Eyes/${adultOrChild}/${data.eyes_colour}.png`
     ];
 
     const loadImages = imagePaths.map((src) => {
@@ -112,7 +113,7 @@ const Canvas: React.FC<CanvasProps> = () => {
 
     Promise.all(loadImages)
       .then((images: HTMLImageElement[]) => {
-        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask,imageear,imagehorns,imagenose,imagehair] = images;
+        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask,imageear,imagehorns,imagenose,imagehair,imageeyes] = images;
 
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -121,7 +122,7 @@ const Canvas: React.FC<CanvasProps> = () => {
         if (!ctx) return;
 
 
-        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose,imagehorns,imagehair, 0, ctx);
+        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose,imagehorns,imagehair,imageeyes, 0, ctx);
         baseBody.draw();
 
         const foregroundLayer = new ForegroundLayer(imageTailFg, imageWingsFg, 0, ctx);
