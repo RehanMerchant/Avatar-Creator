@@ -41,7 +41,7 @@ export const SidebarCustomHead = () => {
         return (
           <div
             onClick={() => {
-              setData({ ...data, head_type: "custom", custom_head:title, nose:"none",hair_type:"none", fin:"none", ear_type:"none" });
+              setData({ ...data, head_type: "custom", custom_head:title, nose:"none",hair_type:"none", ear_type:"none" });
             }}
             className="flex flex-col items-center gap-0.5 cursor-pointer"
           >

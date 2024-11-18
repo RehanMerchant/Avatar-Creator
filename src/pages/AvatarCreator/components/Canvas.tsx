@@ -29,7 +29,6 @@ const Canvas: React.FC<CanvasProps> = () => {
     let headcustom = ""
     let earcolour=""
     let horncolour=""
-    let fincolor =""
     let nosecolor =""
     let haircolor =""
     let tailColour = data.tail_type === "none" ? "none" : data.tail_colour;
