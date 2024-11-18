@@ -34,6 +34,7 @@ const Canvas: React.FC<CanvasProps> = () => {
     let eyebrowcolor =""
     let beardcolour =""
     let muchcolor =""
+     let prebuiltdresscolour =""
     let tailColour = data.tail_type === "none" ? "none" : data.tail_colour;
     let wingsHeader = data.wings_type === "dragonfly" || data.wings_type === "pixie" ? data.wings_opacity : "adult";
     let wingsColour = data.wings_type === "none" ? "none" : data.wings_colour;
@@ -105,6 +106,13 @@ const Canvas: React.FC<CanvasProps> = () => {
     } else{
       muchcolor=data.much_colour
     }
+
+
+    if(data.dress == "none"){
+      prebuiltdresscolour="none"
+    } else{
+      prebuiltdresscolour=data.dress_colour
+    }
     
 
     const imagePaths: string[] = [
@@ -123,7 +131,8 @@ const Canvas: React.FC<CanvasProps> = () => {
        `/assets/Head/Eyes/${adultOrChild}/${data.eyes_colour}.png`,
        `/assets/Head/Eyebrows/${data.eyebrow}/${adultOrChild}/${eyebrowcolor}.png`,
        `/assets/Head/Facial_Hair/beard/${data.beard}/${beardcolour}.png`,
-         `/assets/Head/Facial_Hair/mustache/${data.much}/${muchcolor}.png`
+        `/assets/Head/Facial_Hair/mustache/${data.much}/${muchcolor}.png`,
+        `/assets/Dress/${data.dress_type}/${data.dress}/female/${prebuiltdresscolour}.png`
     ];
 
     const loadImages = imagePaths.map((src) => {
@@ -137,7 +146,7 @@ const Canvas: React.FC<CanvasProps> = () => {
 
     Promise.all(loadImages)
       .then((images: HTMLImageElement[]) => {
-        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask,imageear,imagehorns,imagenose,imagehair,imageeyes,imageeyebrow, imagebeard,imagemuch] = images;
+        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask,imageear,imagehorns,imagenose,imagehair,imageeyes,imageeyebrow, imagebeard,imagemuch,imageprebuiltdress] = images;
 
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -146,7 +155,7 @@ const Canvas: React.FC<CanvasProps> = () => {
         if (!ctx) return;
 
 
-        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose,imagehorns,imagehair,imageeyes,imageeyebrow,imagebeard,imagemuch, 0, ctx);
+        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose,imagehorns,imagehair,imageeyes,imageeyebrow,imagebeard,imagemuch,imageprebuiltdress, 0, ctx);
         baseBody.draw();
 
         const foregroundLayer = new ForegroundLayer(imageTailFg, imageWingsFg, 0, ctx);
