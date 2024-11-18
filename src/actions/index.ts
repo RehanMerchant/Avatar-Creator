@@ -29,12 +29,13 @@
     imagehorns:any;
     imagehair:any;
     imageeyes:any;
+    imageeyebrow:any;
     animation: number;
     ctx: CanvasRenderingContext2D;
     SpriteSides = 64;
     imageear: any;
     
-    constructor(imagebody:any,imagehead:any,imagetail:any,imagewings:any,prosthesis:any,prosthesismask:any,imageear:any,imagenose:any,imagehorns:any,imagehair:any,imageeyes:any,animation:number,ctx:CanvasRenderingContext2D){
+    constructor(imagebody:any,imagehead:any,imagetail:any,imagewings:any,prosthesis:any,prosthesismask:any,imageear:any,imagenose:any,imagehorns:any,imagehair:any,imageeyes:any,imageeyebrow:any,animation:number,ctx:CanvasRenderingContext2D){
         super()
         this.imagebody = imagebody;
         this.imagehead = imagehead;
@@ -47,6 +48,7 @@
         this.imagenose=imagenose;
         this.imagehair = imagehair;
         this.imageeyes = imageeyes;
+        this.imageeyebrow = imageeyebrow;
         this.animation = animation;
         this.ctx = ctx;
   }
@@ -159,6 +161,17 @@
                         this.SpriteSides,
                         this.SpriteSides
                         )
+                        this.ctx.drawImage(
+                            this.imageeyebrow,
+                            this.SpriteSides*BaseBody.framex,
+                            this.SpriteSides*BaseBody.framey,  
+                            this.SpriteSides,
+                            this.SpriteSides,
+                            0,
+                            0,
+                            this.SpriteSides,
+                            this.SpriteSides
+                            )
                 
                     this.ctx.drawImage(
                         this.imagehair,

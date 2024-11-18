@@ -19,6 +19,7 @@ import HeadTypeSidebar from "./SubComponents/HeadTypeSidebar";
 import NoseSidebar from "./SubComponents/NoseSidebar";
 import HairSidebarCOntent from "./SubComponents/HairSidebarCOntent";
 import Eyessidebar from "./SubComponents/Eyessidebar";
+import EyebrowsSidebar from "./SubComponents/EyebrowsSidebar";
 
 
 
@@ -94,6 +95,16 @@ const Sidebar = () => {
               </AccordionTrigger>
               <AccordionContent>
               <Eyessidebar/>
+              </AccordionContent>
+            </AccordionItem>}
+
+              
+            {  data.head_type=="custom" ? '' : <AccordionItem value="eyebrows">
+              <AccordionTrigger>
+                Eyebrows
+              </AccordionTrigger>
+              <AccordionContent>
+              <EyebrowsSidebar/>
               </AccordionContent>
             </AccordionItem>}
 
