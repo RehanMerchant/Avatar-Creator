@@ -51,11 +51,29 @@ const HairSidebarCOntent = () => {
       <div className="flex gap-2 items-center">
         <input
           type="checkbox"
+          checked={data.hair_type == "balding"}
+          onChange={() => setData({ ...data, hair_type:"balding" })}
+          className="size-4"
+        />
+        <p className="font-medium">Balding</p>
+      </div>
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
           checked={data.hair_type == "bangs"}
           onChange={() => setData({ ...data, hair_type: "bangs" })}
           className="size-4"
         />
         <p className="font-medium">Bangs</p>
+      </div>
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "bangs_bun"}
+          onChange={() => setData({ ...data, hair_type:"bangs_bun" })}
+          className="size-4"
+        />
+        <p className="font-medium">Bangs Bun</p>
       </div>
       <div className="flex gap-2 items-center">
         <input
@@ -332,6 +350,240 @@ const HairSidebarCOntent = () => {
         />
         <p className="font-medium">Mop</p>
       </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "page"}
+          onChange={() => setData({ ...data, hair_type: "page" })}
+          className="size-4"
+        />
+        <p className="font-medium">Page</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "part2"}
+          onChange={() => setData({ ...data, hair_type: "part2" })}
+          className="size-4"
+        />
+        <p className="font-medium">Part2</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "parted"}
+          onChange={() => setData({ ...data, hair_type: "parted" })}
+          className="size-4"
+        />
+        <p className="font-medium">Parted</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "pigtails"}
+          onChange={() => setData({ ...data, hair_type: "pigtails" })}
+          className="size-4"
+        />
+        <p className="font-medium">Pigtails</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "pigtails_bangs"}
+          onChange={() => setData({ ...data, hair_type: "pigtails_bangs" })}
+          className="size-4"
+        />
+        <p className="font-medium">Pigtails Bangs</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "pixie"}
+          onChange={() => setData({ ...data, hair_type: "pixie" })}
+          className="size-4"
+        />
+        <p className="font-medium">Pixie</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "plain"}
+          onChange={() => setData({ ...data, hair_type: "plain" })}
+          className="size-4"
+        />
+        <p className="font-medium">Plain</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "ponytail"}
+          onChange={() => setData({ ...data, hair_type: "ponytail" })}
+          className="size-4"
+        />
+        <p className="font-medium">Ponytail</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "ponytail2"}
+          onChange={() => setData({ ...data, hair_type: "ponytail2" })}
+          className="size-4"
+        />
+        <p className="font-medium">Ponytail2</p>
+      </div>
+
+      
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "princess"}
+          onChange={() => setData({ ...data, hair_type: "princess" })}
+          className="size-4"
+        />
+        <p className="font-medium">Princess</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "sara"}
+          onChange={() => setData({ ...data, hair_type: "sara" })}
+          className="size-4"
+        />
+        <p className="font-medium">Sara</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "shorthawk"}
+          onChange={() => setData({ ...data, hair_type: "shorthawk" })}
+          className="size-4"
+        />
+        <p className="font-medium">Shorthawk</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "single"}
+          onChange={() => setData({ ...data, hair_type: "single" })}
+          className="size-4"
+        />
+        <p className="font-medium">Single</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "spiked"}
+          onChange={() => setData({ ...data, hair_type: "spiked" })}
+          className="size-4"
+        />
+        <p className="font-medium">Spiked</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "spiked_beehive"}
+          onChange={() => setData({ ...data, hair_type: "spiked_beehive" })}
+          className="size-4"
+        />
+        <p className="font-medium">Spiked Beehive</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "spiked_liberty"}
+          onChange={() => setData({ ...data, hair_type: "spiked_liberty" })}
+          className="size-4"
+        />
+        <p className="font-medium">Spiked Liberty</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "spiked_liberty2"}
+          onChange={() => setData({ ...data, hair_type: "spiked_liberty2" })}
+          className="size-4"
+        />
+        <p className="font-medium">Spiked Liberty2</p>
+      </div>
+
+      
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "spiked_porcupine"}
+          onChange={() => setData({ ...data, hair_type: "spiked_porcupine" })}
+          className="size-4"
+        />
+        <p className="font-medium">Spiked Porcupine</p>
+      </div>
+
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "spiked2"}
+          onChange={() => setData({ ...data, hair_type: "spiked2" })}
+          className="size-4"
+        />
+        <p className="font-medium">Spiked2</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "swoop"}
+          onChange={() => setData({ ...data, hair_type: "swoop" })}
+          className="size-4"
+        />
+        <p className="font-medium">Swoop</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "unkempt"}
+          onChange={() => setData({ ...data, hair_type: "unkempt" })}
+          className="size-4"
+        />
+        <p className="font-medium">Unkempt</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "wavy"}
+          onChange={() => setData({ ...data, hair_type: "wavy" })}
+          className="size-4"
+        />
+        <p className="font-medium">Wavy</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.hair_type == "xlong"}
+          onChange={() => setData({ ...data, hair_type: "xlong" })}
+          className="size-4"
+        />
+        <p className="font-medium">Xlong</p>
+      </div>
+
 
     </div>
     {data.hair_type !== "none" ? (

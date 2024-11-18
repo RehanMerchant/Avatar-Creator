@@ -104,7 +104,7 @@ const Canvas: React.FC<CanvasProps> = () => {
       `/assets/Head/horns/${data.horns_type}/${adultOrChild}/${horncolour}.png`,
        `/assets/Head/fins/${data.fin}/${adultOrChild}/${fincolor}.png`,
        `/assets/Head/nose/${data.nose}/adult/${nosecolor}.png`,
-       `/assets/Head/Hair/${data.hair_type}/${head}/${haircolor}.png`
+       `/assets/Head/Hair/${data.hair_type}/adult/${haircolor}.png`
     ];
 
     const loadImages = imagePaths.map((src) => {
@@ -151,10 +151,10 @@ const Canvas: React.FC<CanvasProps> = () => {
      </Button>
     </div>
     <div className="">
-         {loading ? <div className="absolute w-[64px] scale-150 z-20 h-[70px] bg-neutral-950 flex justify-center items-center">
-        <Loader className="animate-spin"/>
+         {loading ? <div className="absolute w-[64px] scale-[2] z-20 h-[70px] bg-neutral-950 flex justify-center items-center">
+        <Loader className="animate-spin size-4"/>
         </div> : ''}
-        <canvas className="scale-150 z-10" width={64} height={70} ref={canvasRef} />
+        <canvas style={{imageRendering:"pixelated"}} className="scale-[2.5] z-10 " width={64} height={70} ref={canvasRef} />
      </div>
   </>  
        
