@@ -179,7 +179,7 @@ const Canvas: React.FC<CanvasProps> = () => {
      </Button>
     </div> 
     <div className="">
-         {loading ? <div className="absolute w-[64px] scale-[2] z-20 h-[70px] bg-neutral-950 flex justify-center items-center">
+         {!loading ? <div className="absolute w-[100px] -ml-5 scale-[2] -mt-1 z-20 h-[80px] bg-neutral-950 flex justify-center items-center">
         <Loader className="animate-spin size-4"/>
         </div> : ''}
         <canvas style={{imageRendering:"pixelated"}} className="scale-[2.5] z-10 " width={64} height={70} ref={canvasRef} />
