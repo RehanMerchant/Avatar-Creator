@@ -20,6 +20,7 @@ import NoseSidebar from "./SubComponents/NoseSidebar";
 import HairSidebarCOntent from "./SubComponents/HairSidebarCOntent";
 import Eyessidebar from "./SubComponents/Eyessidebar";
 import EyebrowsSidebar from "./SubComponents/EyebrowsSidebar";
+import BeardSidebar from "./SubComponents/BeardSidebar";
 
 
 
@@ -80,6 +81,17 @@ const Sidebar = () => {
             {data.body_type=="child" || data.body_type=="teen" || data.head_type=="custom" ? '':
             <HeadTypeSidebar/>}
             <Accordion type="single" collapsible>
+
+            {  data.head_type=="custom" ? '' : <AccordionItem value="beard">
+              <AccordionTrigger>
+                Beard
+              </AccordionTrigger>
+              <AccordionContent>
+             <BeardSidebar/>
+              </AccordionContent>
+            </AccordionItem>}
+
+
            {  data.head_type=="custom" ? '' : <AccordionItem value="ears">
               <AccordionTrigger>
                 Ears
@@ -108,6 +120,14 @@ const Sidebar = () => {
               </AccordionContent>
             </AccordionItem>}
 
+            {  data.body_type=="child" || data.head_type=="custom" ? '' :    <AccordionItem value="hair">
+                <AccordionTrigger>
+                 Hair
+                </AccordionTrigger>
+                <AccordionContent>
+                <HairSidebarCOntent/>
+                </AccordionContent>
+              </AccordionItem>}
               <AccordionItem value="horns">
                 <AccordionTrigger>
                  Horns
@@ -125,14 +145,6 @@ const Sidebar = () => {
                 </AccordionContent>
               </AccordionItem>}
 
-         {  data.body_type=="child" || data.head_type=="custom" ? '' :    <AccordionItem value="hair">
-                <AccordionTrigger>
-                 Hair
-                </AccordionTrigger>
-                <AccordionContent>
-                <HairSidebarCOntent/>
-                </AccordionContent>
-              </AccordionItem>}
 
             </Accordion>
             </div>
