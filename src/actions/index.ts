@@ -26,6 +26,7 @@ export class BaseBody extends Global {
   imagebeard:any;
   imagemuch:any;
   imageprebuiltdress:any;
+  imageTop:any;
   animation: number;
   ctx: CanvasRenderingContext2D;
   SpriteSides = 64;
@@ -47,6 +48,7 @@ export class BaseBody extends Global {
     imagebeard:any,
     imagemuch:any,
     imageprebuiltdress:any,
+    imageTop:any,
     animation: number,
     ctx: CanvasRenderingContext2D
   ) {
@@ -66,6 +68,7 @@ export class BaseBody extends Global {
     this.imagebeard = imagebeard;
     this.imagemuch = imagemuch
     this.imageprebuiltdress = imageprebuiltdress;
+    this.imageTop = imageTop;
     this.animation = animation;
     this.ctx = ctx;
   }
@@ -147,6 +150,18 @@ export class BaseBody extends Global {
     
     this.ctx.drawImage(
       this.imageprebuiltdress,
+      this.SpriteSides * BaseBody.framex,
+      this.SpriteSides * BaseBody.framey,
+      this.SpriteSides,
+      this.SpriteSides,
+      0,
+      0,
+      this.SpriteSides,
+      this.SpriteSides
+    );
+
+    this.ctx.drawImage(
+      this.imageTop,
       this.SpriteSides * BaseBody.framex,
       this.SpriteSides * BaseBody.framey,
       this.SpriteSides,

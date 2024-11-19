@@ -12,6 +12,7 @@ import Bodice from "/assets/base_asset/Dress/bodice.png";
 import Kimino from "/assets/base_asset/Dress/kimino.png";
 import Sash from "/assets/base_asset/Dress/sash.png";
 import Slit from "/assets/base_asset/Dress/slit.png";
+import Robe from "/assets/base_asset/Dress/robe.png";
 
 const PrebuiltDress = () => {
   interface AvatarOptionsBoxProps {
@@ -35,6 +36,7 @@ const PrebuiltDress = () => {
             body_type: bodytype,
             dress: title,
             dress_colour: "blue",
+            top:"none"
           });
         }}
         className="flex flex-col items-center gap-0.5 cursor-pointer"
@@ -110,7 +112,11 @@ const PrebuiltDress = () => {
                   image={Slit}
                   bodytype="female"
                 />
-
+                 <AvatarOptionsBox
+                  title={"robe"}
+                  image={Robe}
+                  bodytype="female"
+                />
                 <AvatarOptionsBox
                   title={"bodice"}
                   image={Bodice}
@@ -156,8 +162,72 @@ const PrebuiltDress = () => {
           )}
           <div className="mt-4">
             <p className="font-medium text-sm">Colours</p>
-            <div className="grid grid-cols-4  mt-2 gap-1  ">
+            <div className="">
+            { data.dress =="robe" ? <div className="grid grid-cols-4  mt-2 gap-1  ">
+
+
               <ColourContainer
+                title={"Black"}
+                colourCode={"black"}
+                link="black"
+              />
+              <ColourContainer
+                title={"Blue"}
+                colourCode={"#466AC9"}
+                link="blue"
+              />
+                  <ColourContainer
+                title={"Brown"}
+                colourCode={"#62351C"}
+                link="brown"
+              />
+                 <ColourContainer
+                title={"Carrot"}
+                colourCode={"#4C2403"}
+                link="carrot"
+              />
+                <ColourContainer
+                title={"Brown2"}
+                colourCode={"#2E1000"}
+                link="dark_brown"
+              />
+
+               <ColourContainer
+                title={"Charcoal"}
+                colourCode={"#010101"}
+                link="dark_gray"
+              />
+
+               <ColourContainer
+                title={"Forest"}
+                colourCode={"#111D06"}
+                link="forest_green"
+              />
+
+              <ColourContainer
+                title={"Gray2"}
+                colourCode={"#575757"}
+                link="light_gray"
+              />
+              
+              <ColourContainer
+                title={"Purple"}
+                colourCode={"#411357"}
+                link="purple"
+              />
+              <ColourContainer
+                title={"Red"}
+                colourCode={"#82171C"}
+                link="red"
+              />
+
+              <ColourContainer
+                title={"White"}
+                colourCode={"#FFFFFF"}
+                link="white"
+              />
+
+            </div> : <div className="grid grid-cols-4  mt-2 gap-1  "> <ColourContainer
                 title={"Black"}
                 colourCode={"black"}
                 link="black"
@@ -277,7 +347,7 @@ const PrebuiltDress = () => {
                 title={"Yellow"}
                 colourCode={"#F3C03F"}
                 link="yellow"
-              />
+              /></div>}
             </div>
           </div>
         </div>

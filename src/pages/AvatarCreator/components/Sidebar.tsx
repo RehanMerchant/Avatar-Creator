@@ -22,6 +22,7 @@ import EyebrowsSidebar from "./SubComponents/EyebrowsSidebar";
 import BeardSidebar from "./SubComponents/BeardSidebar";
 import MushtacheSidebar from "./SubComponents/MushtacheSidebar";
 import PrebuiltDress from "./SubComponents/PrebuiltDress";
+import TopSidebar from "./SubComponents/TopSidebar";
 
 const Sidebar = () => {
   const { data } = useContext(MyContext)!;
@@ -171,24 +172,33 @@ const Sidebar = () => {
               </div>
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="dress">
+          <AccordionItem value="prebuiltdress">
             <AccordionTrigger>
-              Dress
+              Prebuilt Dress
             </AccordionTrigger>
             <AccordionContent>
               
-            <Accordion type="single" collapsible className="w-full mt-1">
-              <AccordionItem value="customdress">
-                <AccordionTrigger>
-                 Prebuilt
-                </AccordionTrigger>
-                <AccordionContent>
-                   <PrebuiltDress/>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+           <PrebuiltDress/>
 
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="customdress">
+            <AccordionTrigger>
+              Custom Dress
+            </AccordionTrigger>
+            <AccordionContent>
+              
+           <Accordion type="single" collapsible>
+            <AccordionItem value="Top">
+              <AccordionTrigger>
+          Top
+              </AccordionTrigger>
+              <AccordionContent>
+           <TopSidebar/>
+              </AccordionContent>
+            </AccordionItem>
 
+           </Accordion>
 
             </AccordionContent>
           </AccordionItem>
