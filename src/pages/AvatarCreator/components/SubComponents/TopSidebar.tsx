@@ -169,16 +169,6 @@ const TopSidebar = () => {
       <div className="flex gap-2 items-center">
         <input
           type="checkbox"
-          checked={data.top == "blouse"}
-          onChange={() => setData({ ...data, top: "blouse", dress:"none" })}
-          className="size-4"
-        />
-        <p className="font-medium">Blouse</p>
-      </div>
-
-      <div className="flex gap-2 items-center">
-        <input
-          type="checkbox"
           checked={data.top == "blouse_longsleeve"}
           onChange={() => setData({ ...data, top: "blouse_longsleeve", dress:"none" })}
           className="size-4"

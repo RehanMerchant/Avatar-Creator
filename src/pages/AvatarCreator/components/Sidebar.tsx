@@ -23,6 +23,7 @@ import BeardSidebar from "./SubComponents/BeardSidebar";
 import MushtacheSidebar from "./SubComponents/MushtacheSidebar";
 import PrebuiltDress from "./SubComponents/PrebuiltDress";
 import TopSidebar from "./SubComponents/TopSidebar";
+import BottomSidebar from "./SubComponents/BottomSidebar";
 
 const Sidebar = () => {
   const { data } = useContext(MyContext)!;
@@ -197,9 +198,16 @@ const Sidebar = () => {
            <TopSidebar/>
               </AccordionContent>
             </AccordionItem>
-
+            <AccordionItem value="Bottom">
+              <AccordionTrigger>
+          Bottom
+              </AccordionTrigger>
+              <AccordionContent>
+           <BottomSidebar/>
+              </AccordionContent>
+            </AccordionItem>
            </Accordion>
-
+         
             </AccordionContent>
           </AccordionItem>
         </Accordion>

@@ -17,7 +17,7 @@ const EarSidebar = () => {
           }
           className="size-4"
         />
-        <p className="font-medium">None</p>
+        <p className="font-medium">Default</p>
       </div>
       <div className="flex gap-2 items-center">
         <input
