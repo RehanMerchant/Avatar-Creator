@@ -33,12 +33,14 @@ interface MyContextType {
     bottom:string,
     bottom_colour:string,
     jacket:string,
-    jacket_colour:string
+    jacket_colour:string,
+    shoe:string,
+    shoe_colour:string
     
   }
   setData: (newData:{body_type:string,body_colour:string,head_type:string,tail_type:string,tail_colour:string,wings_type:string, wings_colour:string, wings_opacity:string,prosthesis:string,custom_head:string,ear_type:string,horns_type:string,horns_colour:string,nose:string,hair_type:string,hair_colour:string,eyes_colour:string,eyebrow:string,eyebrow_colour:string,beard:string,beard_colour:string,much:string,much_colour:string,
   dress_type:string,dress:string,dress_colour:string,top:string,top_colour:string,bottom:string,
-  bottom_colour:string,jacket:string,jacket_colour:string
+  bottom_colour:string,jacket:string,jacket_colour:string,shoe:string,shoe_colour:string
   }) => void;
 }
 
@@ -77,7 +79,9 @@ const MyProvider = ({ children }: { children: React.ReactNode }) => {
     bottom:"none",
     bottom_colour:"black",
     jacket:"none",
-    jacket_colour:"black"
+    jacket_colour:"black",
+    shoe:"none",
+    shoe_colour:"black"
 
 
   });

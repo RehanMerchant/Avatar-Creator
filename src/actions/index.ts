@@ -29,6 +29,7 @@ export class BaseBody extends Global {
   imageTop:any;
   imageBottom:any;
   imagejacket:any;
+  imageshoe:any;
   animation: number;
   ctx: CanvasRenderingContext2D;
   SpriteSides = 64;
@@ -53,6 +54,7 @@ export class BaseBody extends Global {
     imageTop:any,
     imageBottom:any,
     imagejacket:any,
+    imageshoe:any,
     animation: number,
     ctx: CanvasRenderingContext2D
   ) {
@@ -75,6 +77,7 @@ export class BaseBody extends Global {
     this.imageTop = imageTop;
     this.imageBottom = imageBottom;
     this.imagejacket = imagejacket;
+    this.imageshoe = imageshoe;
     this.animation = animation;
     this.ctx = ctx;
   }
@@ -189,6 +192,18 @@ export class BaseBody extends Global {
     );
     this.ctx.drawImage(
       this.imagejacket,
+      this.SpriteSides * BaseBody.framex,
+      this.SpriteSides * BaseBody.framey,
+      this.SpriteSides,
+      this.SpriteSides,
+      0,
+      0,
+      this.SpriteSides,
+      this.SpriteSides
+    );
+
+    this.ctx.drawImage(
+      this.imageshoe,
       this.SpriteSides * BaseBody.framex,
       this.SpriteSides * BaseBody.framey,
       this.SpriteSides,

@@ -25,6 +25,7 @@ import PrebuiltDress from "./SubComponents/PrebuiltDress";
 import TopSidebar from "./SubComponents/TopSidebar";
 import BottomSidebar from "./SubComponents/BottomSidebar";
 import JacketSidebar from "./SubComponents/JacketsSidebar";
+import ShoeSidebar from "./SubComponents/ShoeSidebar";
 
 const Sidebar = () => {
   const { data } = useContext(MyContext)!;
@@ -213,6 +214,14 @@ const Sidebar = () => {
               </AccordionTrigger>
               <AccordionContent>
            <JacketSidebar/>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="shoe">
+              <AccordionTrigger>
+             Shoes
+              </AccordionTrigger>
+              <AccordionContent>
+           <ShoeSidebar/>
               </AccordionContent>
             </AccordionItem>
            </Accordion>
