@@ -198,6 +198,269 @@ const BottomSidebar = () => {
         />
         <p className="font-medium">Plain</p>
       </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "shorts"}
+          onChange={() => setData({ ...data, bottom: "shorts", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Shorts</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "short_shorts"}
+          onChange={() => setData({ ...data, bottom: "short_shorts", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Short Shorts</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "slit"}
+          onChange={() => setData({ ...data, bottom: "slit", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Slit</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "straight"}
+          onChange={() => setData({ ...data, bottom: "straight", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Straight</p>
+      </div>
+
+     
+</div>}
+
+
+{data.body_type == "teen" && <div className="male flex flex-col gap-2">
+
+<div className="flex gap-2 items-center">
+    <input
+      type="checkbox"
+      checked={data.bottom == "none"}
+      onChange={() => setData({ ...data, bottom: "none", dress:"none" })}
+      className="size-4"
+    />
+    <p className="font-medium">None</p>
+  </div>
+
+  <div className="flex gap-2 items-center">
+    <input
+      type="checkbox"
+      checked={data.bottom == "cuffed"}
+      onChange={() => setData({ ...data, bottom: "cuffed", dress:"none" })}
+      className="size-4"
+    />
+    <p className="font-medium">Cuffed</p>
+  </div>
+
+  <div className="flex gap-2 items-center">
+    <input
+      type="checkbox"
+      checked={data.bottom == "hose"}
+      onChange={() => setData({ ...data, bottom: "hose", dress:"none" })}
+      className="size-4"
+    />
+    <p className="font-medium">Hose</p>
+  </div>
+
+  <div className="flex gap-2 items-center">
+    <input
+      type="checkbox"
+      checked={data.bottom == "leggings2"}
+      onChange={() => setData({ ...data, bottom: "leggings2", dress:"none" })}
+      className="size-4"
+    />
+    <p className="font-medium">Leggings</p>
+  </div>
+
+  <div className="flex gap-2 items-center">
+    <input
+      type="checkbox"
+      checked={data.bottom == "pants"}
+      onChange={() => setData({ ...data, bottom: "pants", dress:"none" })}
+      className="size-4"
+    />
+    <p className="font-medium">Pants</p>
+  </div>
+
+  <div className="flex gap-2 items-center">
+    <input
+      type="checkbox"
+      checked={data.bottom == "pants2"}
+      onChange={() => setData({ ...data, bottom: "pants2", dress:"none" })}
+      className="size-4"
+    />
+    <p className="font-medium">Pants2</p>
+  </div>
+
+  <div className="flex gap-2 items-center">
+    <input
+      type="checkbox"
+      checked={data.bottom == "shorts"}
+      onChange={() => setData({ ...data, bottom: "shorts", dress:"none" })}
+      className="size-4"
+    />
+    <p className="font-medium">Shorts</p>
+  </div>
+
+  <div className="flex gap-2 items-center">
+    <input
+      type="checkbox"
+      checked={data.bottom == "short_shorts"}
+      onChange={() => setData({ ...data, bottom: "short_shorts", dress:"none" })}
+      className="size-4"
+    />
+    <p className="font-medium">Short Shorts</p>
+  </div>
+
+
+
+  
+  
+ 
+
+
+</div>}
+
+
+{data.body_type == "child" && <div className="male flex flex-col gap-2">
+    <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.top == "none"}
+          onChange={() => setData({ ...data, top: "none", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">None</p>
+      </div>
+    
+</div>}
+
+{data.body_type == "muscular" && <div className="male flex flex-col gap-2">
+    <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.top == "none"}
+          onChange={() => setData({ ...data, top: "none", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">None</p>
+      </div>
+    
+</div>}
+
+{data.body_type == "pregnant" && <div className="male flex flex-col gap-2">
+    <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "none"}
+          onChange={() => setData({ ...data, bottom: "none", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">None</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "belle"}
+          onChange={() => setData({ ...data, bottom: "belle", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Belle</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "cuffed"}
+          onChange={() => setData({ ...data, bottom: "cuffed", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Cuffed</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "hose"}
+          onChange={() => setData({ ...data, bottom: "hose", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Hose</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "leggings"}
+          onChange={() => setData({ ...data, bottom: "leggings", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Leggings</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "leggings2"}
+          onChange={() => setData({ ...data, bottom: "leggings2", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Leggings2</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "legion"}
+          onChange={() => setData({ ...data, bottom: "legion", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Legion</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "overskirt"}
+          onChange={() => setData({ ...data, bottom: "overskirt", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Overskirt</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "pants"}
+          onChange={() => setData({ ...data, bottom: "pants", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Pants</p>
+      </div>
+
+      <div className="flex gap-2 items-center">
+        <input
+          type="checkbox"
+          checked={data.bottom == "pants2"}
+          onChange={() => setData({ ...data, bottom: "pants2", dress:"none" })}
+          className="size-4"
+        />
+        <p className="font-medium">Pants2</p>
+      </div>
       <div className="flex gap-2 items-center">
         <input
           type="checkbox"
@@ -250,7 +513,6 @@ const BottomSidebar = () => {
 
      
 </div>}
-
 
 
     </div>

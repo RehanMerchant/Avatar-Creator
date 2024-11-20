@@ -37,6 +37,7 @@ const Canvas: React.FC<CanvasProps> = () => {
     let prebuiltdresscolour =""
     let topcolor =""
     let bottomcolor =""
+    let jacketcolor = ""
 
     let tailColour = data.tail_type === "none" ? "none" : data.tail_colour;
     let wingsHeader = data.wings_type === "dragonfly" || data.wings_type === "pixie" ? data.wings_opacity : "adult";
@@ -129,6 +130,12 @@ const Canvas: React.FC<CanvasProps> = () => {
       bottomcolor=data.bottom_colour
     }
 
+    if(data.jacket == "none"){
+      jacketcolor="none"
+    } else{
+      jacketcolor=data.jacket_colour
+    }
+
     const imagePaths: string[] = [
     `/assets/Body/${data.body_type}/${data.body_colour}.png`,
      data.head_type=="custom" ? `/assets/Head/custom/${data.custom_head}/${head}/${headcustom}.png`: `/assets/Head/${head}/${data.body_colour}.png`,
@@ -147,8 +154,9 @@ const Canvas: React.FC<CanvasProps> = () => {
        `/assets/Head/Facial_Hair/beard/${data.beard}/${beardcolour}.png`,
         `/assets/Head/Facial_Hair/mustache/${data.much}/${muchcolor}.png`,
         `/assets/Dress/${data.dress_type}/${data.dress}/female/${prebuiltdresscolour}.png`,
-        `/assets/Dress/Custom/Top/${head}/${data.top}/${head}/${topcolor}.png`,
-        `/assets/Dress/Custom/Bottom/${head}/${data.bottom}/${head}/${bottomcolor}.png`
+        `/assets/Dress/Custom/Top/${data.body_type}/${data.top}/${data.body_type}/${topcolor}.png`,
+        `/assets/Dress/Custom/Bottom/${data.body_type}/${data.bottom}/${data.body_type}/${bottomcolor}.png`,
+        `/assets/Dress/Custom/Jacket/${data.body_type}/${data.jacket}/${data.body_type}/${jacketcolor}.png`
     ];
 
     const loadImages = imagePaths.map((src) => {
@@ -162,7 +170,7 @@ const Canvas: React.FC<CanvasProps> = () => {
 
     Promise.all(loadImages)
       .then((images: HTMLImageElement[]) => {
-        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask,imageear,imagehorns,imagenose,imagehair,imageeyes,imageeyebrow, imagebeard,imagemuch,imageprebuiltdress,imageTop, imageBottom] = images;
+        const [imageBody, imageHead, imageTailBg, imageTailFg, imageWingsBg, imageWingsFg, prosthesis, prosthesisMask,imageear,imagehorns,imagenose,imagehair,imageeyes,imageeyebrow, imagebeard,imagemuch,imageprebuiltdress,imageTop, imageBottom,imagejacket] = images;
 
         const canvas = canvasRef.current;
         if (!canvas) return;
@@ -171,7 +179,7 @@ const Canvas: React.FC<CanvasProps> = () => {
         if (!ctx) return;
 
 
-        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose,imagehorns,imagehair,imageeyes,imageeyebrow,imagebeard,imagemuch,imageprebuiltdress,imageTop,imageBottom, 0, ctx);
+        const baseBody = new BaseBody(imageBody, imageHead, imageTailBg, imageWingsBg, prosthesis, prosthesisMask,imageear,imagenose,imagehorns,imagehair,imageeyes,imageeyebrow,imagebeard,imagemuch,imageprebuiltdress,imageTop,imageBottom,imagejacket, 0, ctx);
         baseBody.draw();
 
         const foregroundLayer = new ForegroundLayer(imageTailFg, imageWingsFg, 0, ctx);
