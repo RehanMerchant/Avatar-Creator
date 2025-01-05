@@ -1,5 +1,7 @@
 # Avatar Creator
 
-This is Avatar Creator System is currently in devloping stage.
-All informations will be avaliable very soon.
+Avatar creator is Completed
+all the assets are taken from https://github.com/sanderfrenken/Universal-LPC-Spritesheet-Character-Generator
+I dont use the assets for any commercial purposes.
 
+Website is live:- https://rehan-avatarmaker.vercel.app/
