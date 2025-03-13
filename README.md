@@ -11,4 +11,5 @@ I dont use the assets for any commercial purposes.
 
 Create tons of Pixel Art and Download it.
 
-Website is live:- https://rehan-avatarmaker.vercel.app/
+Website is live:- https://avatarmaker-rm.vercel.app/
+
